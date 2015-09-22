@@ -20,15 +20,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.NullProgressMonitor;
 
 import org.apache.ivyde.eclipse.cp.IvyClasspathContainer;
 import org.apache.ivyde.eclipse.cp.IvyClasspathContainerHelper;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.ListIterator;
 
 import de.gebit.eclipse.setup.ivyresolve.IvyResolvePackage;
 import de.gebit.eclipse.setup.ivyresolve.IvyResolveTask;
@@ -194,60 +191,15 @@ public class IvyResolveTaskImpl extends SetupTaskImpl implements IvyResolveTask
   @SuppressWarnings("unchecked")
   public void perform(SetupTaskContext context) throws Exception
   {
-    List<ResolveMonitor> tempResolveMonitors = new ArrayList<ResolveMonitor>();
     for (IProject tempProject : ResourcesPlugin.getWorkspace().getRoot().getProjects())
     {
       List<IvyClasspathContainer> tempIvyContainers = IvyClasspathContainerHelper.getContainers(tempProject);
       for (IvyClasspathContainer tempIvyContainer : tempIvyContainers)
       {
-        ResolveMonitor tempMonitor = new ResolveMonitor();
-        tempIvyContainer.launchResolve(false, tempMonitor);
-        tempResolveMonitors.add(tempMonitor);
-
+        // resolving happens synchronously
         context.log("Resolving in " + tempProject.getName() + ": " + tempIvyContainer.getDescription());
+        tempIvyContainer.launchResolve(false, null);
       }
-    }
-
-    // now wait until all
-    synchronized (this)
-    {
-      while (tempResolveMonitors.size() > 0)
-      {
-        ListIterator<ResolveMonitor> it = tempResolveMonitors.listIterator();
-        while (it.hasNext())
-        {
-          ResolveMonitor tempMonitor = it.next();
-          if (tempMonitor.isCanceled() || tempMonitor.isDone())
-          {
-            it.remove();
-          }
-        }
-
-        // abort ?
-        if (context.isCanceled())
-        {
-          return;
-        }
-
-        // wait 2 seconds
-        wait(2000);
-      }
-    }
-  }
-
-  private static class ResolveMonitor extends NullProgressMonitor
-  {
-    private volatile boolean done = false;
-
-    public boolean isDone()
-    {
-      return done;
-    }
-
-    @Override
-    public void done()
-    {
-      done = true;
     }
   }
 } // IvyResolveTaskImpl
