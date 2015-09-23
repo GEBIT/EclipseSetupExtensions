@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getExecuteCommandTask()
- * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.execute.command' repository='https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/' installableUnits='SetupExtensions.feature.group'"
+ * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.execute.command' repository='https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/' installableUnits='SetupExtensions.feature.group'"
  *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='STARTUP MANUAL'"
  * @generated
  */

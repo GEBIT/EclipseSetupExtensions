@@ -26,8 +26,8 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/"/>
-      <discovery label="%updateSiteName" url="https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/"/>
+      <update label="%updateSiteName" url="https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/"/>
+      <discovery label="%updateSiteName" url="https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/"/>
    </url>
 
    <plugin

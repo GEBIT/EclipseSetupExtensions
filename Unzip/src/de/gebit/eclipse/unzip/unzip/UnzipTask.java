@@ -18,7 +18,7 @@ import org.eclipse.oomph.setup.SetupTask;
  * </ul>
  *
  * @see de.gebit.eclipse.unzip.unzip.UnzipPackage#getUnzipTask()
- * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.unzip' repository='https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/' installableUnits='Unzip.feature.group'"
+ * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.unzip' repository='https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/' installableUnits='Unzip.feature.group'"
  *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='BOOTSTRAP STARTUP MANUAL'"
  * @generated
  */

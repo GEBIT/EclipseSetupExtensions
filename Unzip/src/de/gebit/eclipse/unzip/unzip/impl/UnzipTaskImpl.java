@@ -119,9 +119,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
     String oldArchive = archive;
     archive = newArchive;
     if (eNotificationRequired())
-    {
       eNotify(new ENotificationImpl(this, Notification.SET, UnzipPackage.UNZIP_TASK__ARCHIVE, oldArchive, archive));
-    }
   }
 
   /**
@@ -144,9 +142,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
     String oldDestination = destination;
     destination = newDestination;
     if (eNotificationRequired())
-    {
       eNotify(new ENotificationImpl(this, Notification.SET, UnzipPackage.UNZIP_TASK__DESTINATION, oldDestination, destination));
-    }
   }
 
   /**
@@ -159,10 +155,10 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   {
     switch (featureID)
     {
-    case UnzipPackage.UNZIP_TASK__ARCHIVE:
-      return getArchive();
-    case UnzipPackage.UNZIP_TASK__DESTINATION:
-      return getDestination();
+      case UnzipPackage.UNZIP_TASK__ARCHIVE:
+        return getArchive();
+      case UnzipPackage.UNZIP_TASK__DESTINATION:
+        return getDestination();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -177,12 +173,12 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   {
     switch (featureID)
     {
-    case UnzipPackage.UNZIP_TASK__ARCHIVE:
-      setArchive((String)newValue);
-      return;
-    case UnzipPackage.UNZIP_TASK__DESTINATION:
-      setDestination((String)newValue);
-      return;
+      case UnzipPackage.UNZIP_TASK__ARCHIVE:
+        setArchive((String)newValue);
+        return;
+      case UnzipPackage.UNZIP_TASK__DESTINATION:
+        setDestination((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -197,12 +193,12 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   {
     switch (featureID)
     {
-    case UnzipPackage.UNZIP_TASK__ARCHIVE:
-      setArchive(ARCHIVE_EDEFAULT);
-      return;
-    case UnzipPackage.UNZIP_TASK__DESTINATION:
-      setDestination(DESTINATION_EDEFAULT);
-      return;
+      case UnzipPackage.UNZIP_TASK__ARCHIVE:
+        setArchive(ARCHIVE_EDEFAULT);
+        return;
+      case UnzipPackage.UNZIP_TASK__DESTINATION:
+        setDestination(DESTINATION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -217,10 +213,10 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   {
     switch (featureID)
     {
-    case UnzipPackage.UNZIP_TASK__ARCHIVE:
-      return ARCHIVE_EDEFAULT == null ? archive != null : !ARCHIVE_EDEFAULT.equals(archive);
-    case UnzipPackage.UNZIP_TASK__DESTINATION:
-      return DESTINATION_EDEFAULT == null ? destination != null : !DESTINATION_EDEFAULT.equals(destination);
+      case UnzipPackage.UNZIP_TASK__ARCHIVE:
+        return ARCHIVE_EDEFAULT == null ? archive != null : !ARCHIVE_EDEFAULT.equals(archive);
+      case UnzipPackage.UNZIP_TASK__DESTINATION:
+        return DESTINATION_EDEFAULT == null ? destination != null : !DESTINATION_EDEFAULT.equals(destination);
     }
     return super.eIsSet(featureID);
   }
@@ -233,10 +229,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   @Override
   public String toString()
   {
-    if (eIsProxy())
-    {
-      return super.toString();
-    }
+    if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (archive: ");

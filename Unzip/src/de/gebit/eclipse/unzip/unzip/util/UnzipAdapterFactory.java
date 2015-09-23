@@ -74,31 +74,28 @@ public class UnzipAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   protected UnzipSwitch<Adapter> modelSwitch = new UnzipSwitch<Adapter>()
-  {
-    @Override
-    public Adapter caseUnzipTask(UnzipTask object)
     {
-      return createUnzipTaskAdapter();
-    }
-
-    @Override
-    public Adapter caseModelElement(ModelElement object)
-    {
-      return createModelElementAdapter();
-    }
-
-    @Override
-    public Adapter caseSetupTask(SetupTask object)
-    {
-      return createSetupTaskAdapter();
-    }
-
-    @Override
-    public Adapter defaultCase(EObject object)
-    {
-      return createEObjectAdapter();
-    }
-  };
+      @Override
+      public Adapter caseUnzipTask(UnzipTask object)
+      {
+        return createUnzipTaskAdapter();
+      }
+      @Override
+      public Adapter caseModelElement(ModelElement object)
+      {
+        return createModelElementAdapter();
+      }
+      @Override
+      public Adapter caseSetupTask(SetupTask object)
+      {
+        return createSetupTaskAdapter();
+      }
+      @Override
+      public Adapter defaultCase(EObject object)
+      {
+        return createEObjectAdapter();
+      }
+    };
 
   /**
    * Creates an adapter for the <code>target</code>.

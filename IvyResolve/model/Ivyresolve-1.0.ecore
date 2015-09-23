@@ -7,7 +7,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IvyResolveTask" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.ivy.resolve"/>
-      <details key="repository" value="https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/"/>
+      <details key="repository" value="https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/"/>
       <details key="installableUnits" value="IvyResolve.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">

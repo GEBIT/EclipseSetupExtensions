@@ -75,26 +75,16 @@ public class UnzipSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-    case UnzipPackage.UNZIP_TASK:
-    {
-      UnzipTask unzipTask = (UnzipTask)theEObject;
-      T result = caseUnzipTask(unzipTask);
-      if (result == null)
+      case UnzipPackage.UNZIP_TASK:
       {
-        result = caseSetupTask(unzipTask);
+        UnzipTask unzipTask = (UnzipTask)theEObject;
+        T result = caseUnzipTask(unzipTask);
+        if (result == null) result = caseSetupTask(unzipTask);
+        if (result == null) result = caseModelElement(unzipTask);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
       }
-      if (result == null)
-      {
-        result = caseModelElement(unzipTask);
-      }
-      if (result == null)
-      {
-        result = defaultCase(theEObject);
-      }
-      return result;
-    }
-    default:
-      return defaultCase(theEObject);
+      default: return defaultCase(theEObject);
     }
   }
 

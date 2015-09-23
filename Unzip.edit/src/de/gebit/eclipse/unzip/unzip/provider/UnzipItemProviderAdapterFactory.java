@@ -178,7 +178,7 @@ public class UnzipItemProviderAdapterFactory extends UnzipAdapterFactory
     if (isFactoryForType(type))
     {
       Object adapter = super.adapt(object, type);
-      if (!(type instanceof Class<?>) || ((Class<?>)type).isInstance(adapter))
+      if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
       {
         return adapter;
       }
@@ -256,17 +256,14 @@ public class UnzipItemProviderAdapterFactory extends UnzipAdapterFactory
   }
 
   /**
-   * This disposes all of the item providers created by this factory.
+   * This disposes all of the item providers created by this factory. 
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   public void dispose()
   {
-    if (unzipTaskItemProvider != null)
-    {
-      unzipTaskItemProvider.dispose();
-    }
+    if (unzipTaskItemProvider != null) unzipTaskItemProvider.dispose();
   }
 
   /**
@@ -321,7 +318,10 @@ public class UnzipItemProviderAdapterFactory extends UnzipAdapterFactory
       @Override
       public Object caseAnnotation(Annotation object)
       {
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, UnzipFactory.eINSTANCE.createUnzipTask()));
+        newChildDescriptors.add
+          (createChildParameter
+            (BasePackage.Literals.ANNOTATION__CONTENTS,
+             UnzipFactory.eINSTANCE.createUnzipTask()));
 
         return null;
       }
@@ -413,7 +413,10 @@ public class UnzipItemProviderAdapterFactory extends UnzipAdapterFactory
       @Override
       public Object caseSetupTaskContainer(SetupTaskContainer object)
       {
-        newChildDescriptors.add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, UnzipFactory.eINSTANCE.createUnzipTask()));
+        newChildDescriptors.add
+          (createChildParameter
+            (SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS,
+             UnzipFactory.eINSTANCE.createUnzipTask()));
 
         return null;
       }

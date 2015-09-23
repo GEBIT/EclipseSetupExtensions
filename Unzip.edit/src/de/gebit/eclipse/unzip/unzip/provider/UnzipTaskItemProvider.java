@@ -63,9 +63,19 @@ public class UnzipTaskItemProvider extends SetupTaskItemProvider
    */
   protected void addArchivePropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_UnzipTask_archive_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UnzipTask_archive_feature", "_UI_UnzipTask_type"),
-        UnzipPackage.Literals.UNZIP_TASK__ARCHIVE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_UnzipTask_archive_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_UnzipTask_archive_feature", "_UI_UnzipTask_type"),
+         UnzipPackage.Literals.UNZIP_TASK__ARCHIVE,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
   }
 
   /**
@@ -76,10 +86,19 @@ public class UnzipTaskItemProvider extends SetupTaskItemProvider
    */
   protected void addDestinationPropertyDescriptor(Object object)
   {
-    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_UnzipTask_destination_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_UnzipTask_destination_feature", "_UI_UnzipTask_type"),
-        UnzipPackage.Literals.UNZIP_TASK__DESTINATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_UnzipTask_destination_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_UnzipTask_destination_feature", "_UI_UnzipTask_type"),
+         UnzipPackage.Literals.UNZIP_TASK__DESTINATION,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
   }
 
   /**
@@ -114,10 +133,10 @@ public class UnzipTaskItemProvider extends SetupTaskItemProvider
   @Override
   public String getText(Object object)
   {
-    String label = getTextGen(object);
-
-    String type = getString("_UI_UnzipTask_type");
-    return label.startsWith(type + " ") && !label.equals(type) ? label.substring(type.length()).trim() : label;
+    String label = ((UnzipTask)object).getID();
+    return label == null || label.length() == 0 ?
+      getString("_UI_UnzipTask_type") :
+      getString("_UI_UnzipTask_type") + " " + label;
   }
   
   public String getTextGen(Object object)
@@ -140,10 +159,10 @@ public class UnzipTaskItemProvider extends SetupTaskItemProvider
 
     switch (notification.getFeatureID(UnzipTask.class))
     {
-    case UnzipPackage.UNZIP_TASK__ARCHIVE:
-    case UnzipPackage.UNZIP_TASK__DESTINATION:
-      fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-      return;
+      case UnzipPackage.UNZIP_TASK__ARCHIVE:
+      case UnzipPackage.UNZIP_TASK__DESTINATION:
+        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+        return;
     }
     super.notifyChanged(notification);
   }

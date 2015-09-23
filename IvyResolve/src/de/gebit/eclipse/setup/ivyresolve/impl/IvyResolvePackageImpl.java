@@ -274,7 +274,7 @@ public class IvyResolvePackageImpl extends EPackageImpl implements IvyResolvePac
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
     addAnnotation(ivyResolveTaskEClass, source, new String[] { "variableName", "p2.ivy.resolve", "repository",
-        "https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/", "installableUnits", "IvyResolve.feature.group" });
+        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "IvyResolve.feature.group" });
   }
 
   /**

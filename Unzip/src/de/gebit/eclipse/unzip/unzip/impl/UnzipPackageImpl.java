@@ -243,7 +243,7 @@ public class UnzipPackageImpl extends EPackageImpl implements UnzipPackage
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
     addAnnotation(unzipTaskEClass, source, new String[] { "variableName", "p2.unzip", "repository",
-        "https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/", "installableUnits", "Unzip.feature.group" });
+        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "Unzip.feature.group" });
   }
 
   /**

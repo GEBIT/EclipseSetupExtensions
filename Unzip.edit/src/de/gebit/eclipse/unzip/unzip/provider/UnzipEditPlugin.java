@@ -40,7 +40,12 @@ public final class UnzipEditPlugin extends EMFPlugin
    */
   public UnzipEditPlugin()
   {
-    super(new ResourceLocator[] { BaseEditPlugin.INSTANCE, SetupEditPlugin.INSTANCE, });
+    super
+      (new ResourceLocator [] 
+       {
+         BaseEditPlugin.INSTANCE,
+         SetupEditPlugin.INSTANCE,
+       });
   }
 
   /**

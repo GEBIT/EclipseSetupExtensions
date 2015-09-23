@@ -64,10 +64,9 @@ public class UnzipFactoryImpl extends EFactoryImpl implements UnzipFactory
   {
     switch (eClass.getClassifierID())
     {
-    case UnzipPackage.UNZIP_TASK:
-      return createUnzipTask();
-    default:
-      throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+      case UnzipPackage.UNZIP_TASK: return createUnzipTask();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
   }
 

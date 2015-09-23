@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see de.gebit.eclipse.setup.ivyresolve.IvyResolvePackage#getIvyResolveTask()
- * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.ivy.resolve' repository='https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/' installableUnits='IvyResolve.feature.group'"
+ * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.ivy.resolve' repository='https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/' installableUnits='IvyResolve.feature.group'"
  *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='STARTUP MANUAL'"
  * @generated
  */

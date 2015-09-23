@@ -421,11 +421,11 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
     addAnnotation(executeCommandTaskEClass, source, new String[] { "variableName", "p2.execute.command", "repository",
-        "https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/", "installableUnits", "SetupExtensions.feature.group" });
+        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
     addAnnotation(ivyResolveTaskEClass, source, new String[] { "variableName", "p2.ivy.resolve", "repository",
-        "https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/", "installableUnits", "SetupExtensions.feature.group" });
+        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
     addAnnotation(unzipTaskEClass, source, new String[] { "variableName", "p2.unzip", "repository",
-        "https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/", "installableUnits", "SetupExtensions.feature.group" });
+        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
   }
 
   /**

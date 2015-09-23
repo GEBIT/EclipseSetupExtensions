@@ -300,7 +300,7 @@ public class ExecuteCommandPackageImpl extends EPackageImpl implements ExecuteCo
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
     addAnnotation(executeCommandTaskEClass, source, new String[] { "variableName", "p2.execute.command", "repository",
-        "https://files.gebit.de/sites/eclipse/SetupExtension/", "installableUnits", "ExecuteCommand.feature.group" });
+        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "ExecuteCommand.feature.group" });
   }
 
   /**
