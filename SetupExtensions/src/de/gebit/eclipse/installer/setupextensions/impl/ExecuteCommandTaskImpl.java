@@ -324,7 +324,13 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
       context.log("Waiting for " + (Job.getJobManager().find(null).length - 1) + " jobs to complete");
       while (Job.getJobManager().find(null).length > 1)
       {
+        context.log("waiting...");
         Thread.sleep(1000);
+
+        for (Job tempJob : Job.getJobManager().find(null))
+        {
+          context.log("Active job: " + tempJob.getName());
+        }
       }
     }
 
