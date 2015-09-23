@@ -277,7 +277,10 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
         InputStream is = new BufferedInputStream(tempZipfile.getInputStream(tempEntry));
         try
         {
-          FileOutputStream fos = new FileOutputStream(new File(tempDestinationDir, tempEntry.getName()));
+          File tempFile = new File(tempDestinationDir, tempEntry.getName());
+          tempFile.getParentFile().mkdirs();
+
+          FileOutputStream fos = new FileOutputStream(tempFile);
 
           OutputStream tempOut = new BufferedOutputStream(fos, data.length);
           try
