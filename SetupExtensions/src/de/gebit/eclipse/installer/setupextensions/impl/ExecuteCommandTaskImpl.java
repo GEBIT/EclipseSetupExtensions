@@ -320,8 +320,12 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
   {
     if (isWaitForJobs() && !Job.getJobManager().isIdle())
     {
-      context.log("Waiting for " + Job.getJobManager().find(null).length + " jobs to complete");
-      Job.getJobManager().join(null, null);
+      // we're also in a Job, so don't count ourselves
+      context.log("Waiting for " + (Job.getJobManager().find(null).length - 1) + " jobs to complete");
+      while (Job.getJobManager().find(null).length > 1)
+      {
+        Thread.sleep(1000);
+      }
     }
 
     ICommandService cmdService = PlatformUI.getWorkbench().getService(ICommandService.class);
