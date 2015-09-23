@@ -28,6 +28,15 @@ public interface SetupExtensionsFactory extends EFactory
   SetupExtensionsFactory eINSTANCE = de.gebit.eclipse.installer.setupextensions.impl.SetupExtensionsFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>Full Build Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Full Build Task</em>'.
+   * @generated
+   */
+  FullBuildTask createFullBuildTask();
+
+  /**
    * Returns a new object of class '<em>Execute Command Task</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

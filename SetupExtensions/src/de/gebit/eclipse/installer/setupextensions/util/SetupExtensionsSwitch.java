@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
+import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
 import de.gebit.eclipse.installer.setupextensions.IvyResolveTask;
 import de.gebit.eclipse.installer.setupextensions.Project;
 import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
@@ -84,6 +85,24 @@ public class SetupExtensionsSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+    case SetupExtensionsPackage.FULL_BUILD_TASK:
+    {
+      FullBuildTask fullBuildTask = (FullBuildTask)theEObject;
+      T result = caseFullBuildTask(fullBuildTask);
+      if (result == null)
+      {
+        result = caseSetupTask(fullBuildTask);
+      }
+      if (result == null)
+      {
+        result = caseModelElement(fullBuildTask);
+      }
+      if (result == null)
+      {
+        result = defaultCase(theEObject);
+      }
+      return result;
+    }
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK:
     {
       ExecuteCommandTask executeCommandTask = (ExecuteCommandTask)theEObject;
@@ -169,6 +188,22 @@ public class SetupExtensionsSwitch<T> extends Switch<T>
     default:
       return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Full Build Task</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Full Build Task</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFullBuildTask(FullBuildTask object)
+  {
+    return null;
   }
 
   /**

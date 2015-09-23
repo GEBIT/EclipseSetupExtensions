@@ -104,6 +104,31 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
   }
 
   /**
+   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.FullBuildTask} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected FullBuildTaskItemProvider fullBuildTaskItemProvider;
+
+  /**
+   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.FullBuildTask}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createFullBuildTaskAdapter()
+  {
+    if (fullBuildTaskItemProvider == null)
+    {
+      fullBuildTaskItemProvider = new FullBuildTaskItemProvider(this);
+    }
+
+    return fullBuildTaskItemProvider;
+  }
+
+  /**
    * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -369,6 +394,10 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
    */
   public void dispose()
   {
+    if (fullBuildTaskItemProvider != null)
+    {
+      fullBuildTaskItemProvider.dispose();
+    }
     if (executeCommandTaskItemProvider != null)
     {
       executeCommandTaskItemProvider.dispose();
@@ -443,6 +472,8 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
       @Override
       public Object caseAnnotation(Annotation object)
       {
+        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createFullBuildTask()));
+
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createExecuteCommandTask()));
 
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createCommandParameter()));
@@ -543,6 +574,9 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
       @Override
       public Object caseSetupTaskContainer(SetupTaskContainer object)
       {
+        newChildDescriptors
+            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createFullBuildTask()));
+
         newChildDescriptors
             .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createExecuteCommandTask()));
 

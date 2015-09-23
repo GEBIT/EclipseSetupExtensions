@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
+import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
 import de.gebit.eclipse.installer.setupextensions.IvyResolveTask;
 import de.gebit.eclipse.installer.setupextensions.Project;
 import de.gebit.eclipse.installer.setupextensions.SetupExtensionsFactory;
@@ -32,6 +33,13 @@ import de.gebit.eclipse.installer.setupextensions.UnzipTask;
  */
 public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExtensionsPackage
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fullBuildTaskEClass = null;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -134,6 +142,16 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(SetupExtensionsPackage.eNS_URI, theSetupExtensionsPackage);
     return theSetupExtensionsPackage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFullBuildTask()
+  {
+    return fullBuildTaskEClass;
   }
 
   /**
@@ -309,6 +327,8 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     isCreated = true;
 
     // Create classes and their features
+    fullBuildTaskEClass = createEClass(FULL_BUILD_TASK);
+
     executeCommandTaskEClass = createEClass(EXECUTE_COMMAND_TASK);
     createEAttribute(executeCommandTaskEClass, EXECUTE_COMMAND_TASK__COMMAND);
     createEAttribute(executeCommandTaskEClass, EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS);
@@ -365,6 +385,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    fullBuildTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
     executeCommandTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
     commandParameterEClass.getESuperTypes().add(theBasePackage.getModelElement());
     ivyResolveTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
@@ -372,6 +393,8 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     unzipTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
 
     // Initialize classes and features; add operations and parameters
+    initEClass(fullBuildTaskEClass, FullBuildTask.class, "FullBuildTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(executeCommandTaskEClass, ExecuteCommandTask.class, "ExecuteCommandTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExecuteCommandTask_Command(), ecorePackage.getEString(), "command", null, 1, 1, ExecuteCommandTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -433,6 +456,8 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
   protected void createEnablementAnnotations()
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
+    addAnnotation(fullBuildTaskEClass, source, new String[] { "variableName", "p2.execute.command", "repository",
+        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
     addAnnotation(executeCommandTaskEClass, source, new String[] { "variableName", "p2.execute.command", "repository",
         "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
     addAnnotation(ivyResolveTaskEClass, source, new String[] { "variableName", "p2.ivy.resolve", "repository",
@@ -450,6 +475,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
   protected void createValidTriggersAnnotations()
   {
     String source = "http://www.eclipse.org/oomph/setup/ValidTriggers";
+    addAnnotation(fullBuildTaskEClass, source, new String[] { "triggers", "STARTUP" });
     addAnnotation(executeCommandTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
     addAnnotation(ivyResolveTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
     addAnnotation(unzipTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });

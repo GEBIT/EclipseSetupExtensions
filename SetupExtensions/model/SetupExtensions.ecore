@@ -5,6 +5,17 @@
     <details key="schemaLocation" value="http://eclipse.gebit.de/SetupExtensions/schemas/SetupExtensions-1.0.ecore"/>
   </eAnnotations>
 
+  <eClassifiers xsi:type="ecore:EClass" name="FullBuildTask" eSuperTypes="../../org.eclipse.oomph.setup/model/Setup.ecore#//SetupTask">
+    <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
+      <details key="variableName" value="p2.execute.command"/>
+      <details key="repository" value="https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/"/>
+      <details key="installableUnits" value="SetupExtensions.feature.group"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
+      <details key="triggers" value="STARTUP"/>
+    </eAnnotations>
+  </eClassifiers>
+
   <eClassifiers xsi:type="ecore:EClass" name="ExecuteCommandTask" eSuperTypes="../../org.eclipse.oomph.setup/model/Setup.ecore#//SetupTask">
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.execute.command"/>

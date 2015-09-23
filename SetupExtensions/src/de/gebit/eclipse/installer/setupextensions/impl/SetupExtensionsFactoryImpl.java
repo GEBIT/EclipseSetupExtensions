@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
+import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
 import de.gebit.eclipse.installer.setupextensions.IvyResolveTask;
 import de.gebit.eclipse.installer.setupextensions.Project;
 import de.gebit.eclipse.installer.setupextensions.SetupExtensionsFactory;
@@ -73,6 +74,8 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
   {
     switch (eClass.getClassifierID())
     {
+    case SetupExtensionsPackage.FULL_BUILD_TASK:
+      return createFullBuildTask();
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK:
       return createExecuteCommandTask();
     case SetupExtensionsPackage.COMMAND_PARAMETER:
@@ -86,6 +89,17 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
     default:
       throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FullBuildTask createFullBuildTask()
+  {
+    FullBuildTaskImpl fullBuildTask = new FullBuildTaskImpl();
+    return fullBuildTask;
   }
 
   /**

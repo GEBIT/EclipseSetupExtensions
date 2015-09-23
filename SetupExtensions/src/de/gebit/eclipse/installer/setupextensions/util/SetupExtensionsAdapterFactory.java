@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
+import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
 import de.gebit.eclipse.installer.setupextensions.IvyResolveTask;
 import de.gebit.eclipse.installer.setupextensions.Project;
 import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
@@ -85,6 +86,12 @@ public class SetupExtensionsAdapterFactory extends AdapterFactoryImpl
   protected SetupExtensionsSwitch<Adapter> modelSwitch = new SetupExtensionsSwitch<Adapter>()
   {
     @Override
+    public Adapter caseFullBuildTask(FullBuildTask object)
+    {
+      return createFullBuildTaskAdapter();
+    }
+
+    @Override
     public Adapter caseExecuteCommandTask(ExecuteCommandTask object)
     {
       return createExecuteCommandTaskAdapter();
@@ -145,6 +152,21 @@ public class SetupExtensionsAdapterFactory extends AdapterFactoryImpl
   public Adapter createAdapter(Notifier target)
   {
     return modelSwitch.doSwitch((EObject)target);
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.gebit.eclipse.installer.setupextensions.FullBuildTask <em>Full Build Task</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.gebit.eclipse.installer.setupextensions.FullBuildTask
+   * @generated
+   */
+  public Adapter createFullBuildTaskAdapter()
+  {
+    return null;
   }
 
   /**
