@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 
@@ -42,7 +41,6 @@ import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
  * </p>
  * <ul>
  *   <li>{@link de.gebit.eclipse.installer.setupextensions.impl.ExecuteCommandTaskImpl#getCommand <em>Command</em>}</li>
- *   <li>{@link de.gebit.eclipse.installer.setupextensions.impl.ExecuteCommandTaskImpl#isWaitForJobs <em>Wait For Jobs</em>}</li>
  *   <li>{@link de.gebit.eclipse.installer.setupextensions.impl.ExecuteCommandTaskImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
@@ -69,26 +67,6 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
    * @ordered
    */
   protected String command = COMMAND_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isWaitForJobs() <em>Wait For Jobs</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isWaitForJobs()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean WAIT_FOR_JOBS_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isWaitForJobs() <em>Wait For Jobs</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isWaitForJobs()
-   * @generated
-   * @ordered
-   */
-  protected boolean waitForJobs = WAIT_FOR_JOBS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
@@ -151,31 +129,6 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isWaitForJobs()
-  {
-    return waitForJobs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setWaitForJobs(boolean newWaitForJobs)
-  {
-    boolean oldWaitForJobs = waitForJobs;
-    waitForJobs = newWaitForJobs;
-    if (eNotificationRequired())
-    {
-      eNotify(new ENotificationImpl(this, Notification.SET, SetupExtensionsPackage.EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS, oldWaitForJobs, waitForJobs));
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<CommandParameter> getParameters()
   {
     if (parameters == null)
@@ -213,8 +166,6 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
     {
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__COMMAND:
       return getCommand();
-    case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS:
-      return isWaitForJobs();
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__PARAMETERS:
       return getParameters();
     }
@@ -234,9 +185,6 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
     {
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__COMMAND:
       setCommand((String)newValue);
-      return;
-    case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS:
-      setWaitForJobs((Boolean)newValue);
       return;
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__PARAMETERS:
       getParameters().clear();
@@ -259,9 +207,6 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__COMMAND:
       setCommand(COMMAND_EDEFAULT);
       return;
-    case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS:
-      setWaitForJobs(WAIT_FOR_JOBS_EDEFAULT);
-      return;
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__PARAMETERS:
       getParameters().clear();
       return;
@@ -281,8 +226,6 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
     {
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__COMMAND:
       return COMMAND_EDEFAULT == null ? command != null : !COMMAND_EDEFAULT.equals(command);
-    case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS:
-      return waitForJobs != WAIT_FOR_JOBS_EDEFAULT;
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__PARAMETERS:
       return parameters != null && !parameters.isEmpty();
     }
@@ -305,8 +248,6 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (command: ");
     result.append(command);
-    result.append(", waitForJobs: ");
-    result.append(waitForJobs);
     result.append(')');
     return result.toString();
   }
@@ -318,22 +259,6 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
 
   public void perform(SetupTaskContext context) throws Exception
   {
-    if (isWaitForJobs() && !Job.getJobManager().isIdle())
-    {
-      // we're also in a Job, so don't count ourselves
-      context.log("Waiting for " + (Job.getJobManager().find(null).length - 1) + " jobs to complete");
-      while (Job.getJobManager().find(null).length > 1)
-      {
-        context.log("waiting...");
-        Thread.sleep(1000);
-
-        for (Job tempJob : Job.getJobManager().find(null))
-        {
-          context.log("Active job: " + tempJob.getName());
-        }
-      }
-    }
-
     ICommandService cmdService = PlatformUI.getWorkbench().getService(ICommandService.class);
     Command tempCommand = cmdService.getCommand(getCommand());
     if (!tempCommand.isDefined())

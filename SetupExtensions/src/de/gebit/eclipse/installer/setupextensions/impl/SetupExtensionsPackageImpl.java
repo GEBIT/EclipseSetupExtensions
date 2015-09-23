@@ -179,19 +179,9 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExecuteCommandTask_WaitForJobs()
-  {
-    return (EAttribute)executeCommandTaskEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getExecuteCommandTask_Parameters()
   {
-    return (EReference)executeCommandTaskEClass.getEStructuralFeatures().get(2);
+    return (EReference)executeCommandTaskEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -331,7 +321,6 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
 
     executeCommandTaskEClass = createEClass(EXECUTE_COMMAND_TASK);
     createEAttribute(executeCommandTaskEClass, EXECUTE_COMMAND_TASK__COMMAND);
-    createEAttribute(executeCommandTaskEClass, EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS);
     createEReference(executeCommandTaskEClass, EXECUTE_COMMAND_TASK__PARAMETERS);
 
     commandParameterEClass = createEClass(COMMAND_PARAMETER);
@@ -398,8 +387,6 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     initEClass(executeCommandTaskEClass, ExecuteCommandTask.class, "ExecuteCommandTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExecuteCommandTask_Command(), ecorePackage.getEString(), "command", null, 1, 1, ExecuteCommandTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExecuteCommandTask_WaitForJobs(), ecorePackage.getEBoolean(), "waitForJobs", null, 1, 1, ExecuteCommandTask.class, !IS_TRANSIENT,
-        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExecuteCommandTask_Parameters(), getCommandParameter(), null, "parameters", null, 0, -1, ExecuteCommandTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
