@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask#getCommand <em>Command</em>}</li>
+ *   <li>{@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask#isWaitForJobs <em>Wait For Jobs</em>}</li>
  *   <li>{@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
@@ -56,6 +57,32 @@ public interface ExecuteCommandTask extends SetupTask
    * @generated
    */
   void setCommand(String value);
+
+  /**
+   * Returns the value of the '<em><b>Wait For Jobs</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Wait For Jobs</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Wait For Jobs</em>' attribute.
+   * @see #setWaitForJobs(boolean)
+   * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getExecuteCommandTask_WaitForJobs()
+   * @model required="true"
+   * @generated
+   */
+  boolean isWaitForJobs();
+
+  /**
+   * Sets the value of the '{@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask#isWaitForJobs <em>Wait For Jobs</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Wait For Jobs</em>' attribute.
+   * @see #isWaitForJobs()
+   * @generated
+   */
+  void setWaitForJobs(boolean value);
 
   /**
    * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.

@@ -166,13 +166,22 @@ public interface SetupExtensionsPackage extends EPackage
   int EXECUTE_COMMAND_TASK__COMMAND = SetupPackage.SETUP_TASK_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Wait For Jobs</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS = SetupPackage.SETUP_TASK_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXECUTE_COMMAND_TASK__PARAMETERS = SetupPackage.SETUP_TASK_FEATURE_COUNT + 1;
+  int EXECUTE_COMMAND_TASK__PARAMETERS = SetupPackage.SETUP_TASK_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Execute Command Task</em>' class.
@@ -181,7 +190,7 @@ public interface SetupExtensionsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXECUTE_COMMAND_TASK_FEATURE_COUNT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 2;
+  int EXECUTE_COMMAND_TASK_FEATURE_COUNT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link de.gebit.eclipse.installer.setupextensions.impl.CommandParameterImpl <em>Command Parameter</em>}' class.
@@ -515,6 +524,17 @@ public interface SetupExtensionsPackage extends EPackage
   EAttribute getExecuteCommandTask_Command();
 
   /**
+   * Returns the meta object for the attribute '{@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask#isWaitForJobs <em>Wait For Jobs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Wait For Jobs</em>'.
+   * @see de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask#isWaitForJobs()
+   * @see #getExecuteCommandTask()
+   * @generated
+   */
+  EAttribute getExecuteCommandTask_WaitForJobs();
+
+  /**
    * Returns the meta object for the containment reference list '{@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask#getParameters <em>Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -671,6 +691,14 @@ public interface SetupExtensionsPackage extends EPackage
      * @generated
      */
     EAttribute EXECUTE_COMMAND_TASK__COMMAND = eINSTANCE.getExecuteCommandTask_Command();
+
+    /**
+     * The meta object literal for the '<em><b>Wait For Jobs</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS = eINSTANCE.getExecuteCommandTask_WaitForJobs();
 
     /**
      * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.

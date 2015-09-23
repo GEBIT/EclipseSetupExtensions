@@ -57,6 +57,7 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
       super.getPropertyDescriptors(object);
 
       addCommandPropertyDescriptor(object);
+      addWaitForJobsPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -73,6 +74,20 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
         getString("_UI_ExecuteCommandTask_command_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_ExecuteCommandTask_command_feature", "_UI_ExecuteCommandTask_type"),
         SetupExtensionsPackage.Literals.EXECUTE_COMMAND_TASK__COMMAND, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+  }
+
+  /**
+   * This adds a property descriptor for the Wait For Jobs feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addWaitForJobsPropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+        getString("_UI_ExecuteCommandTask_waitForJobs_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_ExecuteCommandTask_waitForJobs_feature", "_UI_ExecuteCommandTask_type"),
+        SetupExtensionsPackage.Literals.EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -165,6 +180,7 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
     switch (notification.getFeatureID(ExecuteCommandTask.class))
     {
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__COMMAND:
+    case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__WAIT_FOR_JOBS:
       fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
       return;
     case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__PARAMETERS:
