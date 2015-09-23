@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package unzip.impl;
+/**
+ */
+package de.gebit.eclipse.unzip.unzip.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -13,9 +8,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import unzip.UnzipFactory;
-import unzip.UnzipPackage;
-import unzip.UnzipTask;
+import de.gebit.eclipse.unzip.unzip.UnzipFactory;
+import de.gebit.eclipse.unzip.unzip.UnzipPackage;
+import de.gebit.eclipse.unzip.unzip.UnzipTask;
 
 /**
  * <!-- begin-user-doc -->

@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package unzip;
+/**
+ */
+package de.gebit.eclipse.unzip.unzip;
 
 import org.eclipse.oomph.setup.SetupPackage;
 
@@ -24,7 +19,7 @@ import org.eclipse.emf.ecore.EPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see unzip.UnzipFactory
+ * @see de.gebit.eclipse.unzip.unzip.UnzipFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='http://eclipse.gebit.de/Unzip/schemas/Unzip-1.0.ecore'"
  * @generated
@@ -61,14 +56,14 @@ public interface UnzipPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  UnzipPackage eINSTANCE = unzip.impl.UnzipPackageImpl.init();
+  UnzipPackage eINSTANCE = de.gebit.eclipse.unzip.unzip.impl.UnzipPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link unzip.impl.UnzipTaskImpl <em>Task</em>}' class.
+   * The meta object id for the '{@link de.gebit.eclipse.unzip.unzip.impl.UnzipTaskImpl <em>Task</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see unzip.impl.UnzipTaskImpl
-   * @see unzip.impl.UnzipPackageImpl#getUnzipTask()
+   * @see de.gebit.eclipse.unzip.unzip.impl.UnzipTaskImpl
+   * @see de.gebit.eclipse.unzip.unzip.impl.UnzipPackageImpl#getUnzipTask()
    * @generated
    */
   int UNZIP_TASK = 0;
@@ -182,32 +177,32 @@ public interface UnzipPackage extends EPackage
   int UNZIP_TASK_FEATURE_COUNT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 2;
 
   /**
-   * Returns the meta object for class '{@link unzip.UnzipTask <em>Task</em>}'.
+   * Returns the meta object for class '{@link de.gebit.eclipse.unzip.unzip.UnzipTask <em>Task</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Task</em>'.
-   * @see unzip.UnzipTask
+   * @see de.gebit.eclipse.unzip.unzip.UnzipTask
    * @generated
    */
   EClass getUnzipTask();
 
   /**
-   * Returns the meta object for the attribute '{@link unzip.UnzipTask#getArchive <em>Archive</em>}'.
+   * Returns the meta object for the attribute '{@link de.gebit.eclipse.unzip.unzip.UnzipTask#getArchive <em>Archive</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Archive</em>'.
-   * @see unzip.UnzipTask#getArchive()
+   * @see de.gebit.eclipse.unzip.unzip.UnzipTask#getArchive()
    * @see #getUnzipTask()
    * @generated
    */
   EAttribute getUnzipTask_Archive();
 
   /**
-   * Returns the meta object for the attribute '{@link unzip.UnzipTask#getDestination <em>Destination</em>}'.
+   * Returns the meta object for the attribute '{@link de.gebit.eclipse.unzip.unzip.UnzipTask#getDestination <em>Destination</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Destination</em>'.
-   * @see unzip.UnzipTask#getDestination()
+   * @see de.gebit.eclipse.unzip.unzip.UnzipTask#getDestination()
    * @see #getUnzipTask()
    * @generated
    */
@@ -237,11 +232,11 @@ public interface UnzipPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link unzip.impl.UnzipTaskImpl <em>Task</em>}' class.
+     * The meta object literal for the '{@link de.gebit.eclipse.unzip.unzip.impl.UnzipTaskImpl <em>Task</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see unzip.impl.UnzipTaskImpl
-     * @see unzip.impl.UnzipPackageImpl#getUnzipTask()
+     * @see de.gebit.eclipse.unzip.unzip.impl.UnzipTaskImpl
+     * @see de.gebit.eclipse.unzip.unzip.impl.UnzipPackageImpl#getUnzipTask()
      * @generated
      */
     EClass UNZIP_TASK = eINSTANCE.getUnzipTask();

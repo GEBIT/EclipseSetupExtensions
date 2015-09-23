@@ -17,7 +17,7 @@
   <foreignModel>Unzip.ecore</foreignModel>
   <genPackages
       prefix="Unzip"
-      basePackage=""
+      basePackage="de.gebit.eclipse.unzip"
       disposableProviderFactory="true"
       multipleEditorPages="false"
       generateModelWizard="false"

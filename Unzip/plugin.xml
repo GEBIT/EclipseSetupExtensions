@@ -10,7 +10,7 @@
       <!-- @generated Unzip -->
       <package
             uri="http://eclipse.gebit.de/Unzip/1.0"
-            class="unzip.UnzipPackage"
+            class="de.gebit.eclipse.unzip.unzip.UnzipPackage"
             genModel="model/Unzip.genmodel"/>
    </extension>
 

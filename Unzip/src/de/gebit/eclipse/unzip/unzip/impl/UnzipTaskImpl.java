@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package unzip.impl;
+/**
+ */
+package de.gebit.eclipse.unzip.unzip.impl;
 
 import org.eclipse.oomph.setup.SetupTaskContext;
 import org.eclipse.oomph.setup.impl.SetupTaskImpl;
@@ -24,27 +19,25 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import unzip.UnzipPackage;
-import unzip.UnzipTask;
+import de.gebit.eclipse.unzip.unzip.UnzipPackage;
+import de.gebit.eclipse.unzip.unzip.UnzipTask;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Unzip Task</b></em>'.
+ * An implementation of the model object '<em><b>Task</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link unzip.impl.UnzipTaskImpl#getArchive <em>Archive</em>}</li>
- *   <li>{@link unzip.impl.UnzipTaskImpl#getDestination <em>Destination</em>}</li>
+ *   <li>{@link de.gebit.eclipse.unzip.unzip.impl.UnzipTaskImpl#getArchive <em>Archive</em>}</li>
+ *   <li>{@link de.gebit.eclipse.unzip.unzip.impl.UnzipTaskImpl#getDestination <em>Destination</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
 {
-  private static final int BUFFER_SIZE = 4096;
-
   /**
    * The default value of the '{@link #getArchive() <em>Archive</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -84,8 +77,6 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
    * @ordered
    */
   protected String destination = DESTINATION_EDEFAULT;
-
-  private static final int PRIORITY = PRIORITY_DEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -256,12 +247,6 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
     return result.toString();
   }
 
-  @Override
-  public int getPriority()
-  {
-    return PRIORITY;
-  }
-
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
     return true;
@@ -269,7 +254,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
 
   public void perform(SetupTaskContext context) throws Exception
   {
-    byte data[] = new byte[BUFFER_SIZE];
+    byte data[] = new byte[4096];
 
     ZipFile tempZipfile = null;
     try
@@ -294,11 +279,11 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
         {
           FileOutputStream fos = new FileOutputStream(new File(tempDestinationDir, tempEntry.getName()));
 
-          OutputStream tempOut = new BufferedOutputStream(fos, BUFFER_SIZE);
+          OutputStream tempOut = new BufferedOutputStream(fos, data.length);
           try
           {
             int count;
-            while ((count = is.read(data, 0, BUFFER_SIZE)) != -1)
+            while ((count = is.read(data, 0, data.length)) != -1)
             {
               tempOut.write(data, 0, count);
             }

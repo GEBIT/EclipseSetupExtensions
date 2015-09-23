@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package unzip.impl;
+/**
+ */
+package de.gebit.eclipse.unzip.unzip.impl;
 
 import org.eclipse.oomph.setup.SetupPackage;
 
@@ -14,9 +9,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import unzip.UnzipFactory;
-import unzip.UnzipPackage;
-import unzip.UnzipTask;
+import de.gebit.eclipse.unzip.unzip.UnzipFactory;
+import de.gebit.eclipse.unzip.unzip.UnzipPackage;
+import de.gebit.eclipse.unzip.unzip.UnzipTask;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,7 +39,7 @@ public class UnzipPackageImpl extends EPackageImpl implements UnzipPackage
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.EPackage.Registry
-   * @see unzip.UnzipPackage#eNS_URI
+   * @see de.gebit.eclipse.unzip.unzip.UnzipPackage#eNS_URI
    * @see #init()
    * @generated
    */

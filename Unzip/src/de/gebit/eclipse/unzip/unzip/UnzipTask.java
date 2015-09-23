@@ -1,35 +1,29 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package unzip;
+/**
+ */
+package de.gebit.eclipse.unzip.unzip;
 
 import org.eclipse.oomph.setup.SetupTask;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Unzip Task</b></em>'.
+ * A representation of the model object '<em><b>Task</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link unzip.UnzipTask#getArchive <em>Archive</em>}</li>
- *   <li>{@link unzip.UnzipTask#getDestination <em>Destination</em>}</li>
+ *   <li>{@link de.gebit.eclipse.unzip.unzip.UnzipTask#getArchive <em>Archive</em>}</li>
+ *   <li>{@link de.gebit.eclipse.unzip.unzip.UnzipTask#getDestination <em>Destination</em>}</li>
  * </ul>
  *
- * @see unzip.UnzipPackage#getUnzipTask()
+ * @see de.gebit.eclipse.unzip.unzip.UnzipPackage#getUnzipTask()
  * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.unzip' repository='https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/' installableUnits='Unzip.feature.group'"
  *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='BOOTSTRAP STARTUP MANUAL'"
  * @generated
  */
 public interface UnzipTask extends SetupTask
 {
-
   /**
    * Returns the value of the '<em><b>Archive</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -40,14 +34,14 @@ public interface UnzipTask extends SetupTask
    * <!-- end-user-doc -->
    * @return the value of the '<em>Archive</em>' attribute.
    * @see #setArchive(String)
-   * @see unzip.UnzipPackage#getUnzipTask_Archive()
+   * @see de.gebit.eclipse.unzip.unzip.UnzipPackage#getUnzipTask_Archive()
    * @model required="true"
    * @generated
    */
   String getArchive();
 
   /**
-   * Sets the value of the '{@link unzip.UnzipTask#getArchive <em>Archive</em>}' attribute.
+   * Sets the value of the '{@link de.gebit.eclipse.unzip.unzip.UnzipTask#getArchive <em>Archive</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Archive</em>' attribute.
@@ -66,14 +60,14 @@ public interface UnzipTask extends SetupTask
    * <!-- end-user-doc -->
    * @return the value of the '<em>Destination</em>' attribute.
    * @see #setDestination(String)
-   * @see unzip.UnzipPackage#getUnzipTask_Destination()
+   * @see de.gebit.eclipse.unzip.unzip.UnzipPackage#getUnzipTask_Destination()
    * @model required="true"
    * @generated
    */
   String getDestination();
 
   /**
-   * Sets the value of the '{@link unzip.UnzipTask#getDestination <em>Destination</em>}' attribute.
+   * Sets the value of the '{@link de.gebit.eclipse.unzip.unzip.UnzipTask#getDestination <em>Destination</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Destination</em>' attribute.

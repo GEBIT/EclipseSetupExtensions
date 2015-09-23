@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package unzip.provider;
+/**
+ */
+package de.gebit.eclipse.unzip.unzip.provider;
 
 import org.eclipse.oomph.base.Annotation;
 import org.eclipse.oomph.base.BasePackage;
@@ -103,7 +98,7 @@ public class UnzipItemProviderAdapterFactory extends UnzipAdapterFactory
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link unzip.UnzipTask} instances.
+   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.unzip.unzip.UnzipTask} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -111,7 +106,7 @@ public class UnzipItemProviderAdapterFactory extends UnzipAdapterFactory
   protected UnzipTaskItemProvider unzipTaskItemProvider;
 
   /**
-   * This creates an adapter for a {@link unzip.UnzipTask}.
+   * This creates an adapter for a {@link de.gebit.eclipse.unzip.unzip.UnzipTask}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated

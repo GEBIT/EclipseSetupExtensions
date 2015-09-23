@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package unzip.provider;
+/**
+ */
+package de.gebit.eclipse.unzip.unzip.provider;
 
 import org.eclipse.oomph.setup.provider.SetupTaskItemProvider;
 
@@ -23,7 +18,7 @@ import de.gebit.eclipse.unzip.unzip.UnzipPackage;
 import de.gebit.eclipse.unzip.unzip.UnzipTask;
 
 /**
- * This is the item provider adapter for a {@link unzip.UnzipTask} object.
+ * This is the item provider adapter for a {@link de.gebit.eclipse.unzip.unzip.UnzipTask} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -116,12 +111,6 @@ public class UnzipTaskItemProvider extends SetupTaskItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTextGen(Object object)
-  {
-    String label = ((UnzipTask)object).getID();
-    return label == null || label.length() == 0 ? getString("_UI_UnzipTask_type") : getString("_UI_UnzipTask_type") + " " + label;
-  }
-
   @Override
   public String getText(Object object)
   {
@@ -129,6 +118,12 @@ public class UnzipTaskItemProvider extends SetupTaskItemProvider
 
     String type = getString("_UI_UnzipTask_type");
     return label.startsWith(type + " ") && !label.equals(type) ? label.substring(type.length()).trim() : label;
+  }
+  
+  public String getTextGen(Object object)
+  {
+    String label = ((UnzipTask)object).getID();
+    return label == null || label.length() == 0 ? getString("_UI_UnzipTask_type") : getString("_UI_UnzipTask_type") + " " + label;
   }
 
   /**

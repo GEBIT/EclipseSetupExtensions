@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package unzip.util;
+/**
+ */
+package de.gebit.eclipse.unzip.unzip.util;
 
 import org.eclipse.oomph.base.ModelElement;
 import org.eclipse.oomph.setup.SetupTask;
@@ -14,8 +9,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
-import unzip.UnzipPackage;
-import unzip.UnzipTask;
+import de.gebit.eclipse.unzip.unzip.UnzipPackage;
+import de.gebit.eclipse.unzip.unzip.UnzipTask;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +22,7 @@ import unzip.UnzipTask;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see unzip.UnzipPackage
+ * @see de.gebit.eclipse.unzip.unzip.UnzipPackage
  * @generated
  */
 public class UnzipSwitch<T> extends Switch<T>

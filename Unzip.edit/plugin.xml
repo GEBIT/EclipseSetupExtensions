@@ -10,7 +10,7 @@
       <!-- @generated Unzip -->
       <factory
             uri="http://eclipse.gebit.de/Unzip/1.0"
-            class="unzip.provider.UnzipItemProviderAdapterFactory"
+            class="de.gebit.eclipse.unzip.unzip.provider.UnzipItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -23,10 +23,9 @@
       <!-- @generated Unzip -->
       <extender
             uri="http://www.eclipse.org/oomph/base/1.0"
-            class="unzip.provider.UnzipItemProviderAdapterFactory$BaseChildCreationExtender"/>
+            class="de.gebit.eclipse.unzip.unzip.provider.UnzipItemProviderAdapterFactory$BaseChildCreationExtender"/>
       <extender
             uri="http://www.eclipse.org/oomph/setup/1.0"
-            class="unzip.provider.UnzipItemProviderAdapterFactory$SetupChildCreationExtender"/>
+            class="de.gebit.eclipse.unzip.unzip.provider.UnzipItemProviderAdapterFactory$SetupChildCreationExtender"/>
    </extension>
-
 </plugin>

@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package unzip.util;
+/**
+ */
+package de.gebit.eclipse.unzip.unzip.util;
 
 import org.eclipse.oomph.base.ModelElement;
 import org.eclipse.oomph.setup.SetupTask;
@@ -15,15 +10,15 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
-import unzip.UnzipPackage;
-import unzip.UnzipTask;
+import de.gebit.eclipse.unzip.unzip.UnzipPackage;
+import de.gebit.eclipse.unzip.unzip.UnzipTask;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see unzip.UnzipPackage
+ * @see de.gebit.eclipse.unzip.unzip.UnzipPackage
  * @generated
  */
 public class UnzipAdapterFactory extends AdapterFactoryImpl
@@ -120,13 +115,13 @@ public class UnzipAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link unzip.UnzipTask <em>Task</em>}'.
+   * Creates a new adapter for an object of class '{@link de.gebit.eclipse.unzip.unzip.UnzipTask <em>Task</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see unzip.UnzipTask
+   * @see de.gebit.eclipse.unzip.unzip.UnzipTask
    * @generated
    */
   public Adapter createUnzipTaskAdapter()
