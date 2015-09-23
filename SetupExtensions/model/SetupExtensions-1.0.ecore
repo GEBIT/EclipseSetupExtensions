@@ -9,7 +9,7 @@
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.execute.command"/>
       <details key="repository" value="https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/"/>
-      <details key="installableUnits" value="ExecuteCommand.feature.group"/>
+      <details key="installableUnits" value="SetupExtensions.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
       <details key="triggers" value="STARTUP MANUAL"/>
@@ -27,7 +27,7 @@
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.ivy.resolve"/>
       <details key="repository" value="https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/"/>
-      <details key="installableUnits" value="IvyResolve.feature.group"/>
+      <details key="installableUnits" value="SetupExtensions.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
       <details key="triggers" value="STARTUP MANUAL"/>
@@ -43,7 +43,7 @@
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.unzip"/>
       <details key="repository" value="https://raw.githubusercontent.com/wiki/GEBIT/EclipseSetupExtensions/updates/"/>
-      <details key="installableUnits" value="Unzip.feature.group"/>
+      <details key="installableUnits" value="SetupExtensions.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
       <details key="triggers" value="BOOTSTRAP STARTUP MANUAL"/>
