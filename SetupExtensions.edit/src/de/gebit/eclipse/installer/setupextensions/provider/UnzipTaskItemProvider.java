@@ -116,11 +116,19 @@ public class UnzipTaskItemProvider extends SetupTaskItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public String getText(Object object)
+  public String getTextGen(Object object)
   {
     String label = ((UnzipTask)object).getID();
     return label == null || label.length() == 0 ? getString("_UI_UnzipTask_type") : getString("_UI_UnzipTask_type") + " " + label;
+  }
+
+  @Override
+  public String getText(Object object)
+  {
+    String label = getTextGen(object);
+
+    String type = getString("_UI_UnzipTask_type");
+    return label.startsWith(type + " ") && !label.equals(type) ? label.substring(type.length()).trim() : label;
   }
 
   /**

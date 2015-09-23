@@ -117,17 +117,19 @@ public class CommandParameterItemProvider extends ModelElementItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public String getText(Object object)
+  public String getTextGen(Object object)
   {
     String label = ((CommandParameter)object).getName();
     return label == null || label.length() == 0 ? getString("_UI_CommandParameter_type") : getString("_UI_CommandParameter_type") + " " + label;
   }
 
-  public String getTextGen(Object object)
+  @Override
+  public String getText(Object object)
   {
-    String label = ((CommandParameter)object).getName();
-    return label == null || label.length() == 0 ? getString("_UI_CommandParameter_type") : getString("_UI_CommandParameter_type") + " " + label;
+    String label = getTextGen(object);
+
+    String type = getString("_UI_CommandParameter_type");
+    return label.startsWith(type + " ") && !label.equals(type) ? label.substring(type.length()).trim() : label;
   }
 
   /**

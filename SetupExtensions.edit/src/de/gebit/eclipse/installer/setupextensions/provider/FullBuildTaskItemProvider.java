@@ -11,7 +11,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import java.util.Collection;
 import java.util.List;
 
-import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
 import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
 
 /**
@@ -81,12 +80,6 @@ public class FullBuildTaskItemProvider extends SetupTaskItemProvider
    */
   @Override
   public String getText(Object object)
-  {
-    String label = ((ExecuteCommandTask)object).getID();
-    return label == null || label.length() == 0 ? getString("_UI_ExecuteCommandTask_type") : getString("_UI_ExecuteCommandTask_type") + " " + label;
-  }
-
-  public String getTextGen(Object object)
   {
     String label = ((FullBuildTask)object).getID();
     return label == null || label.length() == 0 ? getString("_UI_FullBuildTask_type") : getString("_UI_FullBuildTask_type") + " " + label;

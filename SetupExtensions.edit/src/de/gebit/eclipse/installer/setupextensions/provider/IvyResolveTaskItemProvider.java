@@ -127,12 +127,6 @@ public class IvyResolveTaskItemProvider extends SetupTaskItemProvider
     return label == null || label.length() == 0 ? getString("_UI_IvyResolveTask_type") : getString("_UI_IvyResolveTask_type") + " " + label;
   }
 
-  public String getTextGen(Object object)
-  {
-    String label = ((IvyResolveTask)object).getID();
-    return label == null || label.length() == 0 ? getString("_UI_IvyResolveTask_type") : getString("_UI_IvyResolveTask_type") + " " + label;
-  }
-
   /**
    * This handles model notifications by calling {@link #updateChildren} to update any cached
    * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
