@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/SetupExtensions/src"
+    creationIcons="false"
+    editorDirectory=""
+    modelPluginID="SetupExtensions"
+    modelName="SetupExtensions"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0"
+    copyrightFields="false"
+    optimizedHasChildren="true"
+    usedGenPackages="../../org.eclipse.oomph.base/model/Base.genmodel#//base ../../org.eclipse.oomph.setup/model/Setup.genmodel#//setup"
+    testsDirectory=""
+    importOrganizing="true"
+    cleanup="true">
+  <foreignModel>SetupExtensions.ecore</foreignModel>
+  <genPackages
+      prefix="SetupExtensions"
+      basePackage="de.gebit.eclipse.installer"
+      disposableProviderFactory="true"
+      multipleEditorPages="false"
+      generateModelWizard="false"
+      extensibleProviderFactory="true"
+      childCreationExtenders="true"
+      fileExtensions="setup"
+      publicationLocation="/SetupExtensions/model/SetupExtensions-1.0.ecore"
+      ecorePackage="SetupExtensions.ecore#/">
+    <genClasses ecoreClass="SetupExtensions.ecore#//SetupExtensionsTask"/>
+  </genPackages>
+</genmodel:GenModel>
