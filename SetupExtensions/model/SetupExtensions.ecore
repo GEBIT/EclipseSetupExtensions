@@ -68,4 +68,20 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="archive" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="destination" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  
+  
+  <eClassifiers xsi:type="ecore:EClass" name="EpfImportTask" eSuperTypes="../../org.eclipse.oomph.setup/model/Setup.ecore#//SetupTask">
+    <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
+      <details key="variableName" value="p2.epf.import"/>
+      <details key="repository" value="https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/"/>
+      <details key="installableUnits" value="SetupExtensions.feature.group"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
+      <details key="triggers" value="BOOTSTRAP STARTUP MANUAL"/>
+    </eAnnotations>
+    
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ignoreMissing" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  
 </ecore:EPackage>

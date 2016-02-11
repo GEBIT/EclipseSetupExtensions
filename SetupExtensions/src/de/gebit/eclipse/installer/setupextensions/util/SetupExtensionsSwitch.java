@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
+import de.gebit.eclipse.installer.setupextensions.EpfImportTask;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
 import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
 import de.gebit.eclipse.installer.setupextensions.IvyResolveTask;
@@ -185,6 +186,24 @@ public class SetupExtensionsSwitch<T> extends Switch<T>
       }
       return result;
     }
+    case SetupExtensionsPackage.EPF_IMPORT_TASK:
+    {
+      EpfImportTask epfImportTask = (EpfImportTask)theEObject;
+      T result = caseEpfImportTask(epfImportTask);
+      if (result == null)
+      {
+        result = caseSetupTask(epfImportTask);
+      }
+      if (result == null)
+      {
+        result = caseModelElement(epfImportTask);
+      }
+      if (result == null)
+      {
+        result = defaultCase(theEObject);
+      }
+      return result;
+    }
     default:
       return defaultCase(theEObject);
     }
@@ -282,6 +301,22 @@ public class SetupExtensionsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUnzipTask(UnzipTask object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Epf Import Task</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Epf Import Task</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEpfImportTask(EpfImportTask object)
   {
     return null;
   }

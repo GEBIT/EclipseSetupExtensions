@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
+import de.gebit.eclipse.installer.setupextensions.EpfImportTask;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
 import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
 import de.gebit.eclipse.installer.setupextensions.IvyResolveTask;
@@ -86,6 +87,8 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
       return createProject();
     case SetupExtensionsPackage.UNZIP_TASK:
       return createUnzipTask();
+    case SetupExtensionsPackage.EPF_IMPORT_TASK:
+      return createEpfImportTask();
     default:
       throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -155,6 +158,17 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
   {
     UnzipTaskImpl unzipTask = new UnzipTaskImpl();
     return unzipTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EpfImportTask createEpfImportTask()
+  {
+    EpfImportTaskImpl epfImportTask = new EpfImportTaskImpl();
+    return epfImportTask;
   }
 
   /**

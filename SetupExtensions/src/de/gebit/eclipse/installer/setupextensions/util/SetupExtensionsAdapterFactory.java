@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
+import de.gebit.eclipse.installer.setupextensions.EpfImportTask;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
 import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
 import de.gebit.eclipse.installer.setupextensions.IvyResolveTask;
@@ -119,6 +120,12 @@ public class SetupExtensionsAdapterFactory extends AdapterFactoryImpl
     public Adapter caseUnzipTask(UnzipTask object)
     {
       return createUnzipTaskAdapter();
+    }
+
+    @Override
+    public Adapter caseEpfImportTask(EpfImportTask object)
+    {
+      return createEpfImportTaskAdapter();
     }
 
     @Override
@@ -240,6 +247,21 @@ public class SetupExtensionsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUnzipTaskAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.gebit.eclipse.installer.setupextensions.EpfImportTask <em>Epf Import Task</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.gebit.eclipse.installer.setupextensions.EpfImportTask
+   * @generated
+   */
+  public Adapter createEpfImportTaskAdapter()
   {
     return null;
   }

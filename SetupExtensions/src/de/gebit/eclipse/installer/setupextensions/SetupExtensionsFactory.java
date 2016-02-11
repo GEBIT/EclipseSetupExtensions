@@ -82,6 +82,15 @@ public interface SetupExtensionsFactory extends EFactory
   UnzipTask createUnzipTask();
 
   /**
+   * Returns a new object of class '<em>Epf Import Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Epf Import Task</em>'.
+   * @generated
+   */
+  EpfImportTask createEpfImportTask();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
