@@ -456,8 +456,8 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     initEClass(epfImportTaskEClass, EpfImportTask.class, "EpfImportTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEpfImportTask_Input(), ecorePackage.getEString(), "input", null, 1, 1, EpfImportTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
         !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEpfImportTask_IgnoreMissing(), ecorePackage.getEBoolean(), "ignoreMissing", null, 1, 1, EpfImportTask.class, !IS_TRANSIENT, !IS_VOLATILE,
-        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEpfImportTask_IgnoreMissing(), ecorePackage.getEBoolean(), "ignoreMissing", "false", 0, 1, EpfImportTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource("http://eclipse.gebit.de/SetupExtensions/schemas/SetupExtensions-1.0.ecore");

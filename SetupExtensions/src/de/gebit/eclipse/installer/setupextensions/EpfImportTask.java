@@ -52,6 +52,7 @@ public interface EpfImportTask extends SetupTask
 
   /**
    * Returns the value of the '<em><b>Ignore Missing</b></em>' attribute.
+   * The default value is <code>"false"</code>.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ignore Missing</em>' attribute isn't clear,
@@ -61,7 +62,7 @@ public interface EpfImportTask extends SetupTask
    * @return the value of the '<em>Ignore Missing</em>' attribute.
    * @see #setIgnoreMissing(boolean)
    * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getEpfImportTask_IgnoreMissing()
-   * @model required="true"
+   * @model default="false"
    * @generated
    */
   boolean isIgnoreMissing();
