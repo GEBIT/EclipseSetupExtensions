@@ -119,7 +119,7 @@ public class EpfImportTaskItemProvider extends SetupTaskItemProvider
    */
   public String getTextGen(Object object)
   {
-    String label = ((EpfImportTask)object).getID();
+    String label = ((EpfImportTask)object).getInput();
     return label == null || label.length() == 0 ? getString("_UI_EpfImportTask_type") : getString("_UI_EpfImportTask_type") + " " + label;
   }
 
