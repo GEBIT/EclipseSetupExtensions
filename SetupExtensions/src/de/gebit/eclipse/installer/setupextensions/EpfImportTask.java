@@ -19,7 +19,7 @@ import org.eclipse.oomph.setup.SetupTask;
  *
  * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getEpfImportTask()
  * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.epf.import' repository='https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/' installableUnits='SetupExtensions.feature.group'"
- *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='BOOTSTRAP STARTUP MANUAL'"
+ *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='STARTUP MANUAL'"
  * @generated
  */
 public interface EpfImportTask extends SetupTask

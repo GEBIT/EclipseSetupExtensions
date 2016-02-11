@@ -77,7 +77,7 @@
       <details key="installableUnits" value="SetupExtensions.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
-      <details key="triggers" value="BOOTSTRAP STARTUP MANUAL"/>
+      <details key="triggers" value="STARTUP MANUAL"/>
     </eAnnotations>
     
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -517,7 +517,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     addAnnotation(executeCommandTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
     addAnnotation(ivyResolveTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
     addAnnotation(unzipTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
-    addAnnotation(epfImportTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
+    addAnnotation(epfImportTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
   }
 
 } // SetupExtensionsPackageImpl
