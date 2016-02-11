@@ -115,11 +115,10 @@ public class EpfImportTaskItemProvider extends SetupTaskItemProvider
    * This returns the label text for the adapted class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
    */
   public String getTextGen(Object object)
   {
-    String label = ((EpfImportTask)object).getID();
+    String label = ((EpfImportTask)object).getInput();
     return label == null || label.length() == 0 ? getString("_UI_EpfImportTask_type") : getString("_UI_EpfImportTask_type") + " " + label;
   }
 

@@ -157,6 +157,15 @@ public interface SetupExtensionsPackage extends EPackage
   int FULL_BUILD_TASK__RESTRICTIONS = SetupPackage.SETUP_TASK__RESTRICTIONS;
 
   /**
+   * The feature id for the '<em><b>Filter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FULL_BUILD_TASK__FILTER = SetupPackage.SETUP_TASK__FILTER;
+
+  /**
    * The number of structural features of the '<em>Full Build Task</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -255,6 +264,15 @@ public interface SetupExtensionsPackage extends EPackage
    * @ordered
    */
   int EXECUTE_COMMAND_TASK__RESTRICTIONS = SetupPackage.SETUP_TASK__RESTRICTIONS;
+
+  /**
+   * The feature id for the '<em><b>Filter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXECUTE_COMMAND_TASK__FILTER = SetupPackage.SETUP_TASK__FILTER;
 
   /**
    * The feature id for the '<em><b>Command</b></em>' attribute.
@@ -421,6 +439,15 @@ public interface SetupExtensionsPackage extends EPackage
   int IVY_RESOLVE_TASK__RESTRICTIONS = SetupPackage.SETUP_TASK__RESTRICTIONS;
 
   /**
+   * The feature id for the '<em><b>Filter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IVY_RESOLVE_TASK__FILTER = SetupPackage.SETUP_TASK__FILTER;
+
+  /**
    * The feature id for the '<em><b>Projects</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -567,6 +594,15 @@ public interface SetupExtensionsPackage extends EPackage
   int UNZIP_TASK__RESTRICTIONS = SetupPackage.SETUP_TASK__RESTRICTIONS;
 
   /**
+   * The feature id for the '<em><b>Filter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNZIP_TASK__FILTER = SetupPackage.SETUP_TASK__FILTER;
+
+  /**
    * The feature id for the '<em><b>Archive</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -683,6 +719,15 @@ public interface SetupExtensionsPackage extends EPackage
    * @ordered
    */
   int EPF_IMPORT_TASK__RESTRICTIONS = SetupPackage.SETUP_TASK__RESTRICTIONS;
+
+  /**
+   * The feature id for the '<em><b>Filter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EPF_IMPORT_TASK__FILTER = SetupPackage.SETUP_TASK__FILTER;
 
   /**
    * The feature id for the '<em><b>Input</b></em>' attribute.
