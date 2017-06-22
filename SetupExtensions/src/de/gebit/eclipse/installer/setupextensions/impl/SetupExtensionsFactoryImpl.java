@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
+import de.gebit.eclipse.installer.setupextensions.CreateShortcutTask;
 import de.gebit.eclipse.installer.setupextensions.EpfImportTask;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
 import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
@@ -89,6 +90,8 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
       return createUnzipTask();
     case SetupExtensionsPackage.EPF_IMPORT_TASK:
       return createEpfImportTask();
+    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK:
+      return createCreateShortcutTask();
     default:
       throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -99,6 +102,7 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public FullBuildTask createFullBuildTask()
   {
     FullBuildTaskImpl fullBuildTask = new FullBuildTaskImpl();
@@ -110,6 +114,7 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public ExecuteCommandTask createExecuteCommandTask()
   {
     ExecuteCommandTaskImpl executeCommandTask = new ExecuteCommandTaskImpl();
@@ -121,6 +126,7 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public CommandParameter createCommandParameter()
   {
     CommandParameterImpl commandParameter = new CommandParameterImpl();
@@ -132,6 +138,7 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public IvyResolveTask createIvyResolveTask()
   {
     IvyResolveTaskImpl ivyResolveTask = new IvyResolveTaskImpl();
@@ -143,6 +150,7 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public Project createProject()
   {
     ProjectImpl project = new ProjectImpl();
@@ -154,6 +162,7 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public UnzipTask createUnzipTask()
   {
     UnzipTaskImpl unzipTask = new UnzipTaskImpl();
@@ -165,6 +174,7 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EpfImportTask createEpfImportTask()
   {
     EpfImportTaskImpl epfImportTask = new EpfImportTaskImpl();
@@ -176,6 +186,19 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
+  public CreateShortcutTask createCreateShortcutTask()
+  {
+    CreateShortcutTaskImpl createShortcutTask = new CreateShortcutTaskImpl();
+    return createShortcutTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public SetupExtensionsPackage getSetupExtensionsPackage()
   {
     return (SetupExtensionsPackage)getEPackage();

@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated SetupExtensions -->
       <factory
-            uri="http://eclipse.gebit.de/SetupExtensions/1.0"
+            uri="http://eclipse.gebit.de/SetupExtensions/1.1"
             class="de.gebit.eclipse.installer.setupextensions.provider.SetupExtensionsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

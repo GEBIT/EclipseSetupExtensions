@@ -98,6 +98,7 @@ public class CommandParameterImpl extends ModelElementImpl implements CommandPar
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getName()
   {
     return name;
@@ -108,6 +109,7 @@ public class CommandParameterImpl extends ModelElementImpl implements CommandPar
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setName(String newName)
   {
     String oldName = name;
@@ -123,6 +125,7 @@ public class CommandParameterImpl extends ModelElementImpl implements CommandPar
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getValue()
   {
     return value;
@@ -133,6 +136,7 @@ public class CommandParameterImpl extends ModelElementImpl implements CommandPar
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setValue(String newValue)
   {
     String oldValue = value;

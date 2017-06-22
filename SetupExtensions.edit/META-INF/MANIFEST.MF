@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-SymbolicName: SetupExtensions.edit;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.gebit.eclipse.installer.setupextensions.provider.SetupExtensionsEditPlugin$Implementation
 Bundle-ActivationPolicy: lazy

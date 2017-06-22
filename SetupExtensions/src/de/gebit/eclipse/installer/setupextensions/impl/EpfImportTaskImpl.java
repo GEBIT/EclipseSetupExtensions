@@ -9,12 +9,16 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.swt.widgets.Display;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 import de.gebit.eclipse.installer.setupextensions.EpfImportTask;
@@ -102,6 +106,7 @@ public class EpfImportTaskImpl extends SetupTaskImpl implements EpfImportTask
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getInput()
   {
     return input;
@@ -112,6 +117,7 @@ public class EpfImportTaskImpl extends SetupTaskImpl implements EpfImportTask
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setInput(String newInput)
   {
     String oldInput = input;
@@ -127,6 +133,7 @@ public class EpfImportTaskImpl extends SetupTaskImpl implements EpfImportTask
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public boolean isIgnoreMissing()
   {
     return ignoreMissing;
@@ -137,6 +144,7 @@ public class EpfImportTaskImpl extends SetupTaskImpl implements EpfImportTask
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setIgnoreMissing(boolean newIgnoreMissing)
   {
     boolean oldIgnoreMissing = ignoreMissing;
@@ -245,6 +253,7 @@ public class EpfImportTaskImpl extends SetupTaskImpl implements EpfImportTask
     return result.toString();
   }
 
+  @Override
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
     return true;
@@ -253,9 +262,10 @@ public class EpfImportTaskImpl extends SetupTaskImpl implements EpfImportTask
   /**
    * Load the EPF file and set preferences
    */
-  public void perform(SetupTaskContext context) throws Exception
+  @Override
+  public void perform(final SetupTaskContext context) throws Exception
   {
-    File preferenceFile = new File(getInput());
+    final File preferenceFile = new File(getInput());
     if (!preferenceFile.exists())
     {
       if (isIgnoreMissing())
@@ -268,18 +278,39 @@ public class EpfImportTaskImpl extends SetupTaskImpl implements EpfImportTask
       }
       return;
     }
-    InputStream is = new FileInputStream(preferenceFile);
-    try
+
+    final IStatus[] result = new IStatus[1];
+    Display.getDefault().syncExec(new Runnable()
     {
-      IStatus status = Platform.getPreferencesService().importPreferences(is);
-      if (!status.isOK())
+      @Override
+      public void run()
       {
-        context.log(status);
+        try
+        {
+          InputStream is = new BufferedInputStream(new FileInputStream(preferenceFile));
+          try
+          {
+            result[0] = Platform.getPreferencesService().importPreferences(is);
+          }
+          finally
+          {
+            is.close();
+          }
+        }
+        catch (IOException ex)
+        {
+          result[0] = new Status(IStatus.ERROR, "SetupExtensions", "Failed to import preferences from '" + preferenceFile + "'", ex);
+        }
+        catch (CoreException ex)
+        {
+          result[0] = new Status(IStatus.ERROR, "SetupExtensions", "Failed to import preferences from '" + preferenceFile + "'", ex);
+        }
       }
-    }
-    finally
+    });
+
+    if (result[0] != null && !result[0].isOK())
     {
-      is.close();
+      context.log(result[0]);
     }
   }
 

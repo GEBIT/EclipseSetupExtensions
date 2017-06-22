@@ -109,6 +109,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getArchive()
   {
     return archive;
@@ -119,6 +120,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setArchive(String newArchive)
   {
     String oldArchive = archive;
@@ -134,6 +136,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getDestination()
   {
     return destination;
@@ -144,6 +147,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setDestination(String newDestination)
   {
     String oldDestination = destination;
@@ -252,11 +256,13 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
     return result.toString();
   }
 
+  @Override
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
     return true;
   }
 
+  @Override
   public void perform(SetupTaskContext context) throws Exception
   {
     byte data[] = new byte[4096];

@@ -279,6 +279,31 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
   }
 
   /**
+   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected CreateShortcutTaskItemProvider createShortcutTaskItemProvider;
+
+  /**
+   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createCreateShortcutTaskAdapter()
+  {
+    if (createShortcutTaskItemProvider == null)
+    {
+      createShortcutTaskItemProvider = new CreateShortcutTaskItemProvider(this);
+    }
+
+    return createShortcutTaskItemProvider;
+  }
+
+  /**
    * This returns the root adapter factory that contains this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -447,6 +472,10 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
     {
       epfImportTaskItemProvider.dispose();
     }
+    if (createShortcutTaskItemProvider != null)
+    {
+      createShortcutTaskItemProvider.dispose();
+    }
   }
 
   /**
@@ -514,6 +543,8 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createUnzipTask()));
 
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createEpfImportTask()));
+
+        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createCreateShortcutTask()));
 
         return null;
       }
@@ -619,6 +650,9 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
 
         newChildDescriptors
             .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createEpfImportTask()));
+
+        newChildDescriptors
+            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createCreateShortcutTask()));
 
         return null;
       }

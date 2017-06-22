@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-SymbolicName: SetupExtensions;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
@@ -16,7 +16,8 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
  org.apache.ivyde.eclipse;bundle-version="2.2.0";resolution:=optional,
  org.eclipse.core.commands,
  org.eclipse.ui.workbench,
- org.eclipse.jdt.core
+ org.eclipse.jdt.core,
+ org.eclipse.swt
 Export-Package: de.gebit.eclipse.installer.setupextensions;version="1.0.0",
  de.gebit.eclipse.installer.setupextensions.impl;version="1.0.0",
  de.gebit.eclipse.installer.setupextensions.util;version="1.0.0"

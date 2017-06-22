@@ -104,6 +104,7 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getCommand()
   {
     return command;
@@ -114,6 +115,7 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setCommand(String newCommand)
   {
     String oldCommand = command;
@@ -129,6 +131,7 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EList<CommandParameter> getParameters()
   {
     if (parameters == null)
@@ -252,11 +255,13 @@ public class ExecuteCommandTaskImpl extends SetupTaskImpl implements ExecuteComm
     return result.toString();
   }
 
+  @Override
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
     return true;
   }
 
+  @Override
   public void perform(SetupTaskContext context) throws Exception
   {
     ICommandService cmdService = PlatformUI.getWorkbench().getService(ICommandService.class);

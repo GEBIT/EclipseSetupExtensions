@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
+import de.gebit.eclipse.installer.setupextensions.CreateShortcutTask;
 import de.gebit.eclipse.installer.setupextensions.EpfImportTask;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
 import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
@@ -82,6 +83,13 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * @generated
    */
   private EClass epfImportTaskEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass createShortcutTaskEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -157,6 +165,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EClass getFullBuildTask()
   {
     return fullBuildTaskEClass;
@@ -167,6 +176,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EClass getExecuteCommandTask()
   {
     return executeCommandTaskEClass;
@@ -177,6 +187,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getExecuteCommandTask_Command()
   {
     return (EAttribute)executeCommandTaskEClass.getEStructuralFeatures().get(0);
@@ -187,6 +198,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EReference getExecuteCommandTask_Parameters()
   {
     return (EReference)executeCommandTaskEClass.getEStructuralFeatures().get(1);
@@ -197,6 +209,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EClass getCommandParameter()
   {
     return commandParameterEClass;
@@ -207,6 +220,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getCommandParameter_Name()
   {
     return (EAttribute)commandParameterEClass.getEStructuralFeatures().get(0);
@@ -217,6 +231,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getCommandParameter_Value()
   {
     return (EAttribute)commandParameterEClass.getEStructuralFeatures().get(1);
@@ -227,6 +242,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EClass getIvyResolveTask()
   {
     return ivyResolveTaskEClass;
@@ -237,6 +253,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EReference getIvyResolveTask_Projects()
   {
     return (EReference)ivyResolveTaskEClass.getEStructuralFeatures().get(0);
@@ -247,6 +264,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EClass getProject()
   {
     return projectEClass;
@@ -257,6 +275,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getProject_Pattern()
   {
     return (EAttribute)projectEClass.getEStructuralFeatures().get(0);
@@ -267,6 +286,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EClass getUnzipTask()
   {
     return unzipTaskEClass;
@@ -277,6 +297,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getUnzipTask_Archive()
   {
     return (EAttribute)unzipTaskEClass.getEStructuralFeatures().get(0);
@@ -287,6 +308,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getUnzipTask_Destination()
   {
     return (EAttribute)unzipTaskEClass.getEStructuralFeatures().get(1);
@@ -297,6 +319,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EClass getEpfImportTask()
   {
     return epfImportTaskEClass;
@@ -307,6 +330,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getEpfImportTask_Input()
   {
     return (EAttribute)epfImportTaskEClass.getEStructuralFeatures().get(0);
@@ -317,6 +341,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getEpfImportTask_IgnoreMissing()
   {
     return (EAttribute)epfImportTaskEClass.getEStructuralFeatures().get(1);
@@ -327,6 +352,40 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
+  public EClass getCreateShortcutTask()
+  {
+    return createShortcutTaskEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCreateShortcutTask_Target()
+  {
+    return (EAttribute)createShortcutTaskEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCreateShortcutTask_Location()
+  {
+    return (EAttribute)createShortcutTaskEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public SetupExtensionsFactory getSetupExtensionsFactory()
   {
     return (SetupExtensionsFactory)getEFactoryInstance();
@@ -378,6 +437,10 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     epfImportTaskEClass = createEClass(EPF_IMPORT_TASK);
     createEAttribute(epfImportTaskEClass, EPF_IMPORT_TASK__INPUT);
     createEAttribute(epfImportTaskEClass, EPF_IMPORT_TASK__IGNORE_MISSING);
+
+    createShortcutTaskEClass = createEClass(CREATE_SHORTCUT_TASK);
+    createEAttribute(createShortcutTaskEClass, CREATE_SHORTCUT_TASK__TARGET);
+    createEAttribute(createShortcutTaskEClass, CREATE_SHORTCUT_TASK__LOCATION);
   }
 
   /**
@@ -423,6 +486,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     projectEClass.getESuperTypes().add(theBasePackage.getModelElement());
     unzipTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
     epfImportTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
+    createShortcutTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
 
     // Initialize classes and features; add operations and parameters
     initEClass(fullBuildTaskEClass, FullBuildTask.class, "FullBuildTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -459,8 +523,14 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     initEAttribute(getEpfImportTask_IgnoreMissing(), ecorePackage.getEBoolean(), "ignoreMissing", "false", 0, 1, EpfImportTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(createShortcutTaskEClass, CreateShortcutTask.class, "CreateShortcutTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCreateShortcutTask_Target(), ecorePackage.getEString(), "target", null, 1, 1, CreateShortcutTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateShortcutTask_Location(), ecorePackage.getEString(), "location", null, 1, 1, CreateShortcutTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     // Create resource
-    createResource("http://eclipse.gebit.de/SetupExtensions/schemas/SetupExtensions-1.0.ecore");
+    createResource("http://eclipse.gebit.de/SetupExtensions/schemas/SetupExtensions-1.1.ecore");
 
     // Create annotations
     // http://www.eclipse.org/emf/2002/Ecore
@@ -480,7 +550,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
   protected void createEcoreAnnotations()
   {
     String source = "http://www.eclipse.org/emf/2002/Ecore";
-    addAnnotation(this, source, new String[] { "schemaLocation", "http://eclipse.gebit.de/SetupExtensions/schemas/SetupExtensions-1.0.ecore" });
+    addAnnotation(this, source, new String[] { "schemaLocation", "http://eclipse.gebit.de/SetupExtensions/schemas/SetupExtensions-1.1.ecore" });
   }
 
   /**
@@ -502,6 +572,8 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
         "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
     addAnnotation(epfImportTaskEClass, source, new String[] { "variableName", "p2.epf.import", "repository",
         "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
+    addAnnotation(createShortcutTaskEClass, source, new String[] { "variableName", "p2.epf.import", "repository",
+        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
   }
 
   /**
@@ -518,6 +590,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
     addAnnotation(ivyResolveTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
     addAnnotation(unzipTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
     addAnnotation(epfImportTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
+    addAnnotation(createShortcutTaskEClass, source, new String[] { "triggers", "BOOTSTRAP" });
   }
 
 } // SetupExtensionsPackageImpl

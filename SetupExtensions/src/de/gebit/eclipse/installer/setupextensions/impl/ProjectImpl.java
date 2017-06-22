@@ -77,6 +77,7 @@ public class ProjectImpl extends ModelElementImpl implements Project
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getPattern()
   {
     return pattern;
@@ -87,6 +88,7 @@ public class ProjectImpl extends ModelElementImpl implements Project
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setPattern(String newPattern)
   {
     String oldPattern = pattern;

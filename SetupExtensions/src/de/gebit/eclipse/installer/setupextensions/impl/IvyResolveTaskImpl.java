@@ -81,6 +81,7 @@ public class IvyResolveTaskImpl extends SetupTaskImpl implements IvyResolveTask
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EList<Project> getProjects()
   {
     if (projects == null)
@@ -174,11 +175,13 @@ public class IvyResolveTaskImpl extends SetupTaskImpl implements IvyResolveTask
     return super.eIsSet(featureID);
   }
 
+  @Override
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
     return true;
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public void perform(SetupTaskContext context) throws Exception
   {
