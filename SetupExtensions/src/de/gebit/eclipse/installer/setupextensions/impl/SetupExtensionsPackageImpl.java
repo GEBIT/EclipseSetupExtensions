@@ -524,7 +524,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(createShortcutTaskEClass, CreateShortcutTask.class, "CreateShortcutTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCreateShortcutTask_Target(), ecorePackage.getEString(), "target", null, 1, 1, CreateShortcutTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+    initEAttribute(getCreateShortcutTask_Target(), ecorePackage.getEString(), "target", null, 0, 1, CreateShortcutTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCreateShortcutTask_Location(), ecorePackage.getEString(), "location", null, 1, 1, CreateShortcutTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

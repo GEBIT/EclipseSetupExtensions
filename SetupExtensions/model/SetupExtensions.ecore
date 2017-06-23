@@ -60,8 +60,7 @@
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
       <details key="triggers" value="BOOTSTRAP STARTUP MANUAL"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

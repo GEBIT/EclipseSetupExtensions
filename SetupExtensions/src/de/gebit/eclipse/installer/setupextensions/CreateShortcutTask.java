@@ -34,7 +34,7 @@ public interface CreateShortcutTask extends SetupTask
    * @return the value of the '<em>Target</em>' attribute.
    * @see #setTarget(String)
    * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getCreateShortcutTask_Target()
-   * @model required="true"
+   * @model
    * @generated
    */
   String getTarget();

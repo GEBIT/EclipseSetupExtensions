@@ -260,18 +260,21 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   @Override
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
-    // Return early for bootstrap because the launcher name can't be determined until after the p2 task has performed.
-    if (context.getTrigger() == Trigger.BOOTSTRAP)
+    if (location == null || StringUtil.isEmpty(location))
     {
+      // for the default launcher we can only run on BOOTSTRAP
+      return context.getTrigger() == Trigger.BOOTSTRAP;
+    }
+    else
+    {
+      // only when already up
+      if (context.isSelfHosting())
+      {
+        return false;
+      }
+
       return true;
     }
-
-    if (context.isSelfHosting())
-    {
-      return false;
-    }
-
-    return true;
   }
 
   @Override
@@ -279,8 +282,15 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   {
     if (location == null || StringUtil.isEmpty(location))
     {
-      context.log("location is not set");
-      return;
+      if (context.getTrigger() == Trigger.BOOTSTRAP)
+      {
+        location = new File(context.getInstallationLocation(), context.getLauncherName()).getAbsolutePath();
+      }
+      else
+      {
+        context.log("location is not set");
+        return;
+      }
     }
     // replace environment vars in location
     String pattern = "\\%([A-Za-z0-9_]+)\\%";
