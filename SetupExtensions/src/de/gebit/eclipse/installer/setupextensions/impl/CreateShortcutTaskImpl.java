@@ -296,7 +296,7 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
     String pattern = "\\%([A-Za-z0-9_]+)\\%";
     Pattern expr = Pattern.compile(pattern);
     StringBuffer effectiveLocation = new StringBuffer();
-    Matcher matcher = expr.matcher(effectiveLocation);
+    Matcher matcher = expr.matcher(location);
     while (matcher.find())
     {
       String envValue = System.getenv(matcher.group(1).toUpperCase());
@@ -316,9 +316,11 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
       context.log("target is not set");
       return;
     }
+    context.log("Creating shortcut to " + target + " at " + effectiveLocation.toString());
     File parentLocation = new File(effectiveLocation.toString()).getParentFile();
     if (!parentLocation.exists())
     {
+      context.log("Creating folder at " + parentLocation.toString());
       parentLocation.mkdirs();
     }
     ShellLink.createLink(target, effectiveLocation.toString());
