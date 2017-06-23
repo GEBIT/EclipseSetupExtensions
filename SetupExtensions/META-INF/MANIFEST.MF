@@ -7,8 +7,8 @@ Bundle-Version: 1.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;bundle-version="[2.10.0,3.0.0)";visibility:=reexport,
  org.eclipse.oomph.setup;bundle-version="[1.3.0,2.0.0)";visibility:=reexport,
  org.eclipse.oomph.base;bundle-version="[1.3.0,2.0.0)";visibility:=reexport,
@@ -18,6 +18,6 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
  org.eclipse.ui.workbench,
  org.eclipse.jdt.core,
  org.eclipse.swt
-Export-Package: de.gebit.eclipse.installer.setupextensions;version="1.0.0",
- de.gebit.eclipse.installer.setupextensions.impl;version="1.0.0",
- de.gebit.eclipse.installer.setupextensions.util;version="1.0.0"
+Export-Package: de.gebit.eclipse.installer.setupextensions;version="1.1.0",
+ de.gebit.eclipse.installer.setupextensions.impl;version="1.1.0",
+ de.gebit.eclipse.installer.setupextensions.util;version="1.1.0"

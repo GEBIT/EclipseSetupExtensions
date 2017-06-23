@@ -10,6 +10,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import de.gebit.eclipse.installer.setupextensions.CreateShortcutTask;
 import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
 import mslinks.ShellLink;
@@ -257,11 +260,30 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
       context.log("location is not set");
       return;
     }
+    // replace environment vars in location
+    String pattern = "\\%([A-Za-z0-9_]+)\\%";
+    Pattern expr = Pattern.compile(pattern);
+    StringBuffer effectiveLocation = new StringBuffer();
+    Matcher matcher = expr.matcher(effectiveLocation);
+    while (matcher.find())
+    {
+      String envValue = System.getenv(matcher.group(1).toUpperCase());
+      if (envValue == null)
+      {
+        envValue = "";
+      }
+      else
+      {
+        envValue = envValue.replace("\\", "\\\\");
+      }
+      matcher.appendReplacement(effectiveLocation, envValue);
+    }
+    matcher.appendTail(effectiveLocation);
     if (target == null || StringUtil.isEmpty(target))
     {
       context.log("target is not set");
       return;
     }
-    ShellLink.createLink(target, location);
+    ShellLink.createLink(target, effectiveLocation.toString());
   }
 } // CreateShortcutTaskImpl
