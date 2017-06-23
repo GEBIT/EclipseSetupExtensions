@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -253,6 +254,12 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   }
 
   @Override
+  public int getPriority()
+  {
+    return PRIORITY_INSTALLATION - 1;
+  }
+
+  @Override
   public void perform(SetupTaskContext context) throws Exception
   {
     if (location == null || StringUtil.isEmpty(location))
@@ -283,6 +290,11 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
     {
       context.log("target is not set");
       return;
+    }
+    File parentLocation = new File(effectiveLocation.toString()).getParentFile();
+    if (!parentLocation.exists())
+    {
+      parentLocation.mkdirs();
     }
     ShellLink.createLink(target, effectiveLocation.toString());
   }
