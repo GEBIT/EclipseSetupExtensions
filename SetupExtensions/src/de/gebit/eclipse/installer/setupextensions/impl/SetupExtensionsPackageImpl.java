@@ -530,7 +530,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
-    createResource("http://eclipse.gebit.de/SetupExtensions/schemas/SetupExtensions-1.1.ecore");
+    createResource("https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensions/model/SetupExtensions-1.1.ecore");
 
     // Create annotations
     // http://www.eclipse.org/emf/2002/Ecore
@@ -550,7 +550,8 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
   protected void createEcoreAnnotations()
   {
     String source = "http://www.eclipse.org/emf/2002/Ecore";
-    addAnnotation(this, source, new String[] { "schemaLocation", "http://eclipse.gebit.de/SetupExtensions/schemas/SetupExtensions-1.1.ecore" });
+    addAnnotation(this, source, new String[] { "schemaLocation",
+        "https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensions/model/SetupExtensions-1.1.ecore" });
   }
 
   /**

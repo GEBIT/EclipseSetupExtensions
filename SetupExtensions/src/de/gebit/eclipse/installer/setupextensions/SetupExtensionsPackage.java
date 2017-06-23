@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='http://eclipse.gebit.de/SetupExtensions/schemas/SetupExtensions-1.1.ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensions/model/SetupExtensions-1.1.ecore'"
  * @generated
  */
 public interface SetupExtensionsPackage extends EPackage
