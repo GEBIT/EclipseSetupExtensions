@@ -24,8 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getIvyResolveTask()
- * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.ivy.resolve' repository='https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/' installableUnits='SetupExtensions.feature.group'"
- *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='STARTUP MANUAL'"
+ * @model annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='STARTUP MANUAL'"
  * @generated
  */
 public interface IvyResolveTask extends SetupTask

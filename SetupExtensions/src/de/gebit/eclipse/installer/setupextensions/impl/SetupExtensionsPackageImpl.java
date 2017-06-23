@@ -563,17 +563,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
   protected void createEnablementAnnotations()
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
-    addAnnotation(fullBuildTaskEClass, source, new String[] { "variableName", "p2.execute.command", "repository",
-        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
-    addAnnotation(executeCommandTaskEClass, source, new String[] { "variableName", "p2.execute.command", "repository",
-        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
-    addAnnotation(ivyResolveTaskEClass, source, new String[] { "variableName", "p2.ivy.resolve", "repository",
-        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
-    addAnnotation(unzipTaskEClass, source, new String[] { "variableName", "p2.unzip", "repository",
-        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
-    addAnnotation(epfImportTaskEClass, source, new String[] { "variableName", "p2.epf.import", "repository",
-        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
-    addAnnotation(createShortcutTaskEClass, source, new String[] { "variableName", "p2.create.shortcut", "repository",
+    addAnnotation(this, source, new String[] { "variableName", "p2.setup.extensions", "repository",
         "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
   }
 
