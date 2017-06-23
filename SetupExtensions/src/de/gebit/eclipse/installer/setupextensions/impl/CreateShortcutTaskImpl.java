@@ -3,6 +3,7 @@
 package de.gebit.eclipse.installer.setupextensions.impl;
 
 import org.eclipse.oomph.setup.SetupTaskContext;
+import org.eclipse.oomph.setup.Trigger;
 import org.eclipse.oomph.setup.impl.SetupTaskImpl;
 import org.eclipse.oomph.util.StringUtil;
 
@@ -247,9 +248,29 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
     return result.toString();
   }
 
+  /**
+   * Execute at installation time
+   */
+  @Override
+  public int getPriority()
+  {
+    return PRIORITY_INSTALLATION + 1;
+  }
+
   @Override
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
+    // Return early for bootstrap because the launcher name can't be determined until after the p2 task has performed.
+    if (context.getTrigger() == Trigger.BOOTSTRAP)
+    {
+      return true;
+    }
+
+    if (context.isSelfHosting())
+    {
+      return false;
+    }
+
     return true;
   }
 
