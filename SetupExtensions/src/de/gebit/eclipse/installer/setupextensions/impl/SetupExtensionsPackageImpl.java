@@ -573,7 +573,7 @@ public class SetupExtensionsPackageImpl extends EPackageImpl implements SetupExt
         "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
     addAnnotation(epfImportTaskEClass, source, new String[] { "variableName", "p2.epf.import", "repository",
         "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
-    addAnnotation(createShortcutTaskEClass, source, new String[] { "variableName", "p2.epf.import", "repository",
+    addAnnotation(createShortcutTaskEClass, source, new String[] { "variableName", "p2.create.shortcut", "repository",
         "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensions.feature.group" });
   }
 
