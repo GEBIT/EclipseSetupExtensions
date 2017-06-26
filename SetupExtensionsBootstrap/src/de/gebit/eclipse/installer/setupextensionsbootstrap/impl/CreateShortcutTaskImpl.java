@@ -329,6 +329,7 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
       while (shortcutFile.exists())
       {
         // make unique and store
+        context.log("  Shortcut at " + effectiveLocation + " exists, trying extension  (" + unique++ + ")");
         shortcutFile = new File(effectiveLocation.toString() + " (" + unique++ + ")");
         setLocation(effectiveLocation.toString());
       }
