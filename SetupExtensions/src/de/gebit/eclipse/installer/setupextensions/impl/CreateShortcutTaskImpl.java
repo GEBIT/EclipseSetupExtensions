@@ -316,6 +316,11 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
       context.log("target is not set");
       return;
     }
+    // remove .lnk extension if provided (will be added later)
+    if (effectiveLocation.length() > 4 && effectiveLocation.substring(effectiveLocation.length() - 4).equalsIgnoreCase(".lnk"))
+    {
+      effectiveLocation.delete(effectiveLocation.length() - 4, effectiveLocation.length());
+    }
     context.log("Creating shortcut to " + target + " at " + effectiveLocation.toString());
     File shortcutFile = new File(effectiveLocation.toString());
     File parentLocation = shortcutFile.getParentFile();
@@ -324,12 +329,12 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
       context.log("Creating folder at " + parentLocation.toString());
       parentLocation.mkdirs();
     }
-    int unique = 2;
-    while (shortcutFile.exists())
-    {
-      // make unique
-      shortcutFile = new File(effectiveLocation.toString() + " (" + unique++ + ")");
-    }
-    ShellLink.createLink(target, shortcutFile.getAbsolutePath());
+    // int unique = 2;
+    // while (shortcutFile.exists())
+    // {
+    // // make unique
+    // shortcutFile = new File(effectiveLocation.toString() + " (" + unique++ + ")");
+    // }
+    ShellLink.createLink(target, shortcutFile.getAbsolutePath() + ".lnk");
   }
 } // CreateShortcutTaskImpl
