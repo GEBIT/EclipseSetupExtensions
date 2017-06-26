@@ -315,7 +315,7 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
       effectiveLocation.delete(effectiveLocation.length() - 4, effectiveLocation.length());
     }
     context.log("Creating shortcut to " + target + " at " + effectiveLocation.toString());
-    File shortcutFile = new File(effectiveLocation.toString());
+    File shortcutFile = new File(effectiveLocation + ".lnk");
     File parentLocation = shortcutFile.getParentFile();
     if (!parentLocation.exists())
     {
@@ -329,11 +329,11 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
       while (shortcutFile.exists())
       {
         // make unique and store
-        context.log("  Shortcut at " + effectiveLocation + " exists, trying extension  (" + unique++ + ")");
-        shortcutFile = new File(effectiveLocation.toString() + " (" + unique++ + ")");
-        setLocation(effectiveLocation.toString());
+        context.log("  Shortcut at " + effectiveLocation + " exists, trying extension  (" + unique + ")");
+        shortcutFile = new File(effectiveLocation + " (" + unique++ + ")" + ".lnk");
+        setLocation(shortcutFile.getCanonicalPath());
       }
     }
-    ShellLink.createLink(target, shortcutFile.getAbsolutePath() + ".lnk");
+    ShellLink.createLink(target, shortcutFile.getAbsolutePath());
   }
 } // CreateShortcutTaskImpl
