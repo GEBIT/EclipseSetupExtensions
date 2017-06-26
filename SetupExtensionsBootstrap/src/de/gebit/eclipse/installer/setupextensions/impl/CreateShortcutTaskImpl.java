@@ -254,7 +254,7 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   @Override
   public int getPriority()
   {
-    return PRIORITY_INSTALLATION + 1;
+    return PRIORITY_CONFIGURATION;
   }
 
   @Override

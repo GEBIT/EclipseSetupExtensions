@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+#
+# Copyright (C) 2015
+# GEBIT Solutions GmbH,
+# Berlin, Duesseldorf, Stuttgart (Germany)
+# All rights reserved.
+#
+-->
+<feature
+      id="SetupExtensionsBootstrap"
+      label="%featureName"
+      version="1.1.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright url="http://www.example.org/SetupExtensionsBootstrapcopyright.html">
+      %copyright
+   </copyright>
+
+   <license url="http://www.example.org/SetupExtensionsBootstrap/license.html">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/"/>
+      <discovery label="%updateSiteName" url="https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/"/>
+   </url>
+
+   <plugin
+         id="SetupExtensionsBootstrap"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="SetupExtensionsBootstrap.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

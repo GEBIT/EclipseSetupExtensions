@@ -229,6 +229,31 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
   }
 
   /**
+   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.UnzipTask} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected UnzipTaskItemProvider unzipTaskItemProvider;
+
+  /**
+   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.UnzipTask}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createUnzipTaskAdapter()
+  {
+    if (unzipTaskItemProvider == null)
+    {
+      unzipTaskItemProvider = new UnzipTaskItemProvider(this);
+    }
+
+    return unzipTaskItemProvider;
+  }
+
+  /**
    * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.EpfImportTask} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -251,6 +276,31 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
     }
 
     return epfImportTaskItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected CreateShortcutTaskItemProvider createShortcutTaskItemProvider;
+
+  /**
+   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createCreateShortcutTaskAdapter()
+  {
+    if (createShortcutTaskItemProvider == null)
+    {
+      createShortcutTaskItemProvider = new CreateShortcutTaskItemProvider(this);
+    }
+
+    return createShortcutTaskItemProvider;
   }
 
   /**
@@ -422,9 +472,17 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
     {
       projectItemProvider.dispose();
     }
+    if (unzipTaskItemProvider != null)
+    {
+      unzipTaskItemProvider.dispose();
+    }
     if (epfImportTaskItemProvider != null)
     {
       epfImportTaskItemProvider.dispose();
+    }
+    if (createShortcutTaskItemProvider != null)
+    {
+      createShortcutTaskItemProvider.dispose();
     }
   }
 
@@ -490,7 +548,11 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
 
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createProject()));
 
+        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createUnzipTask()));
+
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createEpfImportTask()));
+
+        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createCreateShortcutTask()));
 
         return null;
       }
@@ -594,7 +656,13 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
             .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createIvyResolveTask()));
 
         newChildDescriptors
+            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createUnzipTask()));
+
+        newChildDescriptors
             .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createEpfImportTask()));
+
+        newChildDescriptors
+            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createCreateShortcutTask()));
 
         return null;
       }

@@ -73,6 +73,15 @@ public interface SetupExtensionsFactory extends EFactory
   Project createProject();
 
   /**
+   * Returns a new object of class '<em>Unzip Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unzip Task</em>'.
+   * @generated
+   */
+  UnzipTask createUnzipTask();
+
+  /**
    * Returns a new object of class '<em>Epf Import Task</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -80,6 +89,15 @@ public interface SetupExtensionsFactory extends EFactory
    * @generated
    */
   EpfImportTask createEpfImportTask();
+
+  /**
+   * Returns a new object of class '<em>Create Shortcut Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Create Shortcut Task</em>'.
+   * @generated
+   */
+  CreateShortcutTask createCreateShortcutTask();
 
   /**
    * Returns the package supported by this factory.

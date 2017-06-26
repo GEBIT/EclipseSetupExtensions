@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.gebit.eclipse.installer.setupextensions.CommandParameter;
+import de.gebit.eclipse.installer.setupextensions.CreateShortcutTask;
 import de.gebit.eclipse.installer.setupextensions.EpfImportTask;
 import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
 import de.gebit.eclipse.installer.setupextensions.FullBuildTask;
@@ -21,6 +22,7 @@ import de.gebit.eclipse.installer.setupextensions.IvyResolveTask;
 import de.gebit.eclipse.installer.setupextensions.Project;
 import de.gebit.eclipse.installer.setupextensions.SetupExtensionsFactory;
 import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
+import de.gebit.eclipse.installer.setupextensions.UnzipTask;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,8 +86,12 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
       return createIvyResolveTask();
     case SetupExtensionsPackage.PROJECT:
       return createProject();
+    case SetupExtensionsPackage.UNZIP_TASK:
+      return createUnzipTask();
     case SetupExtensionsPackage.EPF_IMPORT_TASK:
       return createEpfImportTask();
+    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK:
+      return createCreateShortcutTask();
     default:
       throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -157,10 +163,34 @@ public class SetupExtensionsFactoryImpl extends EFactoryImpl implements SetupExt
    * @generated
    */
   @Override
+  public UnzipTask createUnzipTask()
+  {
+    UnzipTaskImpl unzipTask = new UnzipTaskImpl();
+    return unzipTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EpfImportTask createEpfImportTask()
   {
     EpfImportTaskImpl epfImportTask = new EpfImportTaskImpl();
     return epfImportTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CreateShortcutTask createCreateShortcutTask()
+  {
+    CreateShortcutTaskImpl createShortcutTask = new CreateShortcutTaskImpl();
+    return createShortcutTask;
   }
 
   /**

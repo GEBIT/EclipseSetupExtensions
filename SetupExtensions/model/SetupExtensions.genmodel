@@ -25,17 +25,9 @@
     <genClasses ecoreClass="SetupExtensions.ecore#//Project">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensions.ecore#//Project/pattern"/>
     </genClasses>
-    <genClasses ecoreClass="SetupExtensions.ecore#//UnzipTask">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensions.ecore#//UnzipTask/archive"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensions.ecore#//UnzipTask/destination"/>
-    </genClasses>
     <genClasses ecoreClass="SetupExtensions.ecore#//EpfImportTask">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensions.ecore#//EpfImportTask/input"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensions.ecore#//EpfImportTask/ignoreMissing"/>
-    </genClasses>
-    <genClasses ecoreClass="SetupExtensions.ecore#//CreateShortcutTask">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensions.ecore#//CreateShortcutTask/location"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensions.ecore#//CreateShortcutTask/target"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
