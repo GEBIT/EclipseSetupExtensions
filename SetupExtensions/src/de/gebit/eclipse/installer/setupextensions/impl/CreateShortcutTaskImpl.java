@@ -317,12 +317,19 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
       return;
     }
     context.log("Creating shortcut to " + target + " at " + effectiveLocation.toString());
-    File parentLocation = new File(effectiveLocation.toString()).getParentFile();
+    File shortcutFile = new File(effectiveLocation.toString());
+    File parentLocation = shortcutFile.getParentFile();
     if (!parentLocation.exists())
     {
       context.log("Creating folder at " + parentLocation.toString());
       parentLocation.mkdirs();
     }
-    ShellLink.createLink(target, effectiveLocation.toString());
+    int unique = 2;
+    while (shortcutFile.exists())
+    {
+      // make unique
+      shortcutFile = new File(effectiveLocation.toString() + " (" + unique++ + ")");
+    }
+    ShellLink.createLink(target, shortcutFile.getAbsolutePath());
   }
 } // CreateShortcutTaskImpl
