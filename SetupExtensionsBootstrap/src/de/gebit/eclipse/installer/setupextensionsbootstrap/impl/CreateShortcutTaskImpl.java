@@ -282,15 +282,8 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   {
     if (location == null || StringUtil.isEmpty(location))
     {
-      if (context.getTrigger() == Trigger.BOOTSTRAP)
-      {
-        location = new File(context.getInstallationLocation(), context.getLauncherName()).getAbsolutePath();
-      }
-      else
-      {
-        context.log("location is not set");
-        return;
-      }
+      context.log("location is not set");
+      return;
     }
     // replace environment vars in location
     String pattern = "\\%([A-Za-z0-9_]+)\\%";
@@ -329,12 +322,17 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
       context.log("Creating folder at " + parentLocation.toString());
       parentLocation.mkdirs();
     }
-    // int unique = 2;
-    // while (shortcutFile.exists())
-    // {
-    // // make unique
-    // shortcutFile = new File(effectiveLocation.toString() + " (" + unique++ + ")");
-    // }
+    if (context.getTrigger() == Trigger.BOOTSTRAP)
+    {
+      // make the shortcut unique
+      int unique = 2;
+      while (shortcutFile.exists())
+      {
+        // make unique and store
+        shortcutFile = new File(effectiveLocation.toString() + " (" + unique++ + ")");
+        setLocation(effectiveLocation.toString());
+      }
+    }
     ShellLink.createLink(target, shortcutFile.getAbsolutePath() + ".lnk");
   }
 } // CreateShortcutTaskImpl
