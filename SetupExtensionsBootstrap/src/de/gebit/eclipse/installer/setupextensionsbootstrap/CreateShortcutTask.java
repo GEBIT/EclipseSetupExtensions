@@ -1,6 +1,6 @@
 /**
  */
-package de.gebit.eclipse.installer.setupextensions;
+package de.gebit.eclipse.installer.setupextensionsbootstrap;
 
 import org.eclipse.oomph.setup.SetupTask;
 
@@ -13,11 +13,11 @@ import org.eclipse.oomph.setup.SetupTask;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask#getTarget <em>Target</em>}</li>
- *   <li>{@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask#getLocation <em>Location</em>}</li>
+ *   <li>{@link de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask#getLocation <em>Location</em>}</li>
  * </ul>
  *
- * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getCreateShortcutTask()
+ * @see de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage#getCreateShortcutTask()
  * @model annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='BOOTSTRAP STARTUP MANUAL'"
  * @generated
  */
@@ -33,14 +33,14 @@ public interface CreateShortcutTask extends SetupTask
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target</em>' attribute.
    * @see #setTarget(String)
-   * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getCreateShortcutTask_Target()
+   * @see de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage#getCreateShortcutTask_Target()
    * @model
    * @generated
    */
   String getTarget();
 
   /**
-   * Sets the value of the '{@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask#getTarget <em>Target</em>}' attribute.
+   * Sets the value of the '{@link de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask#getTarget <em>Target</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Target</em>' attribute.
@@ -59,14 +59,14 @@ public interface CreateShortcutTask extends SetupTask
    * <!-- end-user-doc -->
    * @return the value of the '<em>Location</em>' attribute.
    * @see #setLocation(String)
-   * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getCreateShortcutTask_Location()
+   * @see de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage#getCreateShortcutTask_Location()
    * @model required="true"
    * @generated
    */
   String getLocation();
 
   /**
-   * Sets the value of the '{@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask#getLocation <em>Location</em>}' attribute.
+   * Sets the value of the '{@link de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask#getLocation <em>Location</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Location</em>' attribute.

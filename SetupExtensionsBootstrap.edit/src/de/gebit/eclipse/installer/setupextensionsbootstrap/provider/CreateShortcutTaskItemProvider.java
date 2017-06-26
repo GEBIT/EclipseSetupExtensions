@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package de.gebit.eclipse.installer.setupextensions.provider;
+/**
+ */
+package de.gebit.eclipse.installer.setupextensionsbootstrap.provider;
 
 import org.eclipse.oomph.setup.provider.SetupTaskItemProvider;
 
@@ -19,16 +14,15 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import java.util.Collection;
 import java.util.List;
 
-import de.gebit.eclipse.installer.setupextensions.EpfImportTask;
-import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
 
 /**
- * This is the item provider adapter for a {@link de.gebit.eclipse.installer.setupextensions.EpfImportTask} object.
+ * This is the item provider adapter for a {@link de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class EpfImportTaskItemProvider extends SetupTaskItemProvider
+public class CreateShortcutTaskItemProvider extends SetupTaskItemProvider
 {
   /**
    * This constructs an instance from a factory and a notifier.
@@ -36,7 +30,7 @@ public class EpfImportTaskItemProvider extends SetupTaskItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public EpfImportTaskItemProvider(AdapterFactory adapterFactory)
+  public CreateShortcutTaskItemProvider(AdapterFactory adapterFactory)
   {
     super(adapterFactory);
   }
@@ -54,42 +48,42 @@ public class EpfImportTaskItemProvider extends SetupTaskItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addInputPropertyDescriptor(object);
-      addIgnoreMissingPropertyDescriptor(object);
+      addTargetPropertyDescriptor(object);
+      addLocationPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
 
   /**
-   * This adds a property descriptor for the Input feature.
+   * This adds a property descriptor for the Target feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addInputPropertyDescriptor(Object object)
+  protected void addTargetPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_EpfImportTask_input_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_EpfImportTask_input_feature", "_UI_EpfImportTask_type"),
-        SetupExtensionsPackage.Literals.EPF_IMPORT_TASK__INPUT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        getString("_UI_CreateShortcutTask_target_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_CreateShortcutTask_target_feature", "_UI_CreateShortcutTask_type"),
+        SetupExtensionsBootstrapPackage.Literals.CREATE_SHORTCUT_TASK__TARGET, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
-   * This adds a property descriptor for the Ignore Missing feature.
+   * This adds a property descriptor for the Location feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addIgnoreMissingPropertyDescriptor(Object object)
+  protected void addLocationPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_EpfImportTask_ignoreMissing_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_EpfImportTask_ignoreMissing_feature", "_UI_EpfImportTask_type"),
-        SetupExtensionsPackage.Literals.EPF_IMPORT_TASK__IGNORE_MISSING, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+        getString("_UI_CreateShortcutTask_location_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_CreateShortcutTask_location_feature", "_UI_CreateShortcutTask_type"),
+        SetupExtensionsBootstrapPackage.Literals.CREATE_SHORTCUT_TASK__LOCATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
-   * This returns EpfImportTask.gif.
+   * This returns CreateShortcutTask.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -97,7 +91,7 @@ public class EpfImportTaskItemProvider extends SetupTaskItemProvider
   @Override
   public Object getImage(Object object)
   {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/EpfImportTask"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/CreateShortcutTask"));
   }
 
   /**
@@ -115,20 +109,13 @@ public class EpfImportTaskItemProvider extends SetupTaskItemProvider
    * This returns the label text for the adapted class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @generated
    */
-  public String getTextGen(Object object)
-  {
-    String label = ((EpfImportTask)object).getInput();
-    return label == null || label.length() == 0 ? getString("_UI_EpfImportTask_type") : getString("_UI_EpfImportTask_type") + " " + label;
-  }
-
   @Override
   public String getText(Object object)
   {
-    String label = getTextGen(object);
-
-    String type = getString("_UI_EpfImportTask_type");
-    return label.startsWith(type + " ") && !label.equals(type) ? label.substring(type.length()).trim() : label;
+    String label = ((de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask)object).getID();
+    return label == null || label.length() == 0 ? getString("_UI_CreateShortcutTask_type") : getString("_UI_CreateShortcutTask_type") + " " + label;
   }
 
   /**
@@ -143,10 +130,10 @@ public class EpfImportTaskItemProvider extends SetupTaskItemProvider
   {
     updateChildren(notification);
 
-    switch (notification.getFeatureID(EpfImportTask.class))
+    switch (notification.getFeatureID(de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask.class))
     {
-    case SetupExtensionsPackage.EPF_IMPORT_TASK__INPUT:
-    case SetupExtensionsPackage.EPF_IMPORT_TASK__IGNORE_MISSING:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__TARGET:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__LOCATION:
       fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
       return;
     }

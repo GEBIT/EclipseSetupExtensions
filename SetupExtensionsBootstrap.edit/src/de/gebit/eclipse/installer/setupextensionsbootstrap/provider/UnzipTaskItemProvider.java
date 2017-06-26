@@ -5,13 +5,12 @@
 // All rights reserved.
 //
 //
-package de.gebit.eclipse.installer.setupextensions.provider;
+package de.gebit.eclipse.installer.setupextensionsbootstrap.provider;
 
 import org.eclipse.oomph.setup.provider.SetupTaskItemProvider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -20,17 +19,15 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import java.util.Collection;
 import java.util.List;
 
-import de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask;
-import de.gebit.eclipse.installer.setupextensions.SetupExtensionsFactory;
-import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
 
 /**
- * This is the item provider adapter for a {@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask} object.
+ * This is the item provider adapter for a {@link de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
+public class UnzipTaskItemProvider extends SetupTaskItemProvider
 {
   /**
    * This constructs an instance from a factory and a notifier.
@@ -38,7 +35,7 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExecuteCommandTaskItemProvider(AdapterFactory adapterFactory)
+  public UnzipTaskItemProvider(AdapterFactory adapterFactory)
   {
     super(adapterFactory);
   }
@@ -56,60 +53,41 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addCommandPropertyDescriptor(object);
+      addArchivePropertyDescriptor(object);
+      addDestinationPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
 
   /**
-   * This adds a property descriptor for the Command feature.
+   * This adds a property descriptor for the Archive feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addCommandPropertyDescriptor(Object object)
+  protected void addArchivePropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_ExecuteCommandTask_command_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_ExecuteCommandTask_command_feature", "_UI_ExecuteCommandTask_type"),
-        SetupExtensionsPackage.Literals.EXECUTE_COMMAND_TASK__COMMAND, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        getString("_UI_UnzipTask_archive_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UnzipTask_archive_feature", "_UI_UnzipTask_type"),
+        SetupExtensionsBootstrapPackage.Literals.UNZIP_TASK__ARCHIVE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
-   * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-   * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-   * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+   * This adds a property descriptor for the Destination feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
+  protected void addDestinationPropertyDescriptor(Object object)
   {
-    if (childrenFeatures == null)
-    {
-      super.getChildrenFeatures(object);
-      childrenFeatures.add(SetupExtensionsPackage.Literals.EXECUTE_COMMAND_TASK__PARAMETERS);
-    }
-    return childrenFeatures;
+    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+        getString("_UI_UnzipTask_destination_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_UnzipTask_destination_feature", "_UI_UnzipTask_type"),
+        SetupExtensionsBootstrapPackage.Literals.UNZIP_TASK__DESTINATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EStructuralFeature getChildFeature(Object object, Object child)
-  {
-    // Check the type of the specified child object and return the proper feature to use for
-    // adding (see {@link AddCommand}) it as a child.
-
-    return super.getChildFeature(object, child);
-  }
-
-  /**
-   * This returns ExecuteCommandTask.gif.
+   * This returns UnzipTask.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -117,7 +95,7 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
   @Override
   public Object getImage(Object object)
   {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/ExecuteCommandTask"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/UnzipTask"));
   }
 
   /**
@@ -139,8 +117,8 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
    */
   public String getTextGen(Object object)
   {
-    String label = ((ExecuteCommandTask)object).getID();
-    return label == null || label.length() == 0 ? getString("_UI_ExecuteCommandTask_type") : getString("_UI_ExecuteCommandTask_type") + " " + label;
+    String label = ((de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask)object).getID();
+    return label == null || label.length() == 0 ? getString("_UI_UnzipTask_type") : getString("_UI_UnzipTask_type") + " " + label;
   }
 
   @Override
@@ -148,7 +126,7 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
   {
     String label = getTextGen(object);
 
-    String type = getString("_UI_ExecuteCommandTask_type");
+    String type = getString("_UI_UnzipTask_type");
     return label.startsWith(type + " ") && !label.equals(type) ? label.substring(type.length()).trim() : label;
   }
 
@@ -164,13 +142,11 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
   {
     updateChildren(notification);
 
-    switch (notification.getFeatureID(ExecuteCommandTask.class))
+    switch (notification.getFeatureID(de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask.class))
     {
-    case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__COMMAND:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__ARCHIVE:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__DESTINATION:
       fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-      return;
-    case SetupExtensionsPackage.EXECUTE_COMMAND_TASK__PARAMETERS:
-      fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
       return;
     }
     super.notifyChanged(notification);
@@ -187,9 +163,6 @@ public class ExecuteCommandTaskItemProvider extends SetupTaskItemProvider
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
   {
     super.collectNewChildDescriptors(newChildDescriptors, object);
-
-    newChildDescriptors
-        .add(createChildParameter(SetupExtensionsPackage.Literals.EXECUTE_COMMAND_TASK__PARAMETERS, SetupExtensionsFactory.eINSTANCE.createCommandParameter()));
   }
 
 }

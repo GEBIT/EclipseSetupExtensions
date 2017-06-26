@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package de.gebit.eclipse.installer.setupextensions.provider;
+/**
+ */
+package de.gebit.eclipse.installer.setupextensionsbootstrap.provider;
 
 import org.eclipse.oomph.base.Annotation;
 import org.eclipse.oomph.base.BasePackage;
@@ -39,9 +34,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import de.gebit.eclipse.installer.setupextensions.SetupExtensionsFactory;
-import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
-import de.gebit.eclipse.installer.setupextensions.util.SetupExtensionsAdapterFactory;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapFactory;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.util.SetupExtensionsBootstrapAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -52,7 +47,7 @@ import de.gebit.eclipse.installer.setupextensions.util.SetupExtensionsAdapterFac
  * <!-- end-user-doc -->
  * @generated
  */
-public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAdapterFactory
+public class SetupExtensionsBootstrapItemProviderAdapterFactory extends SetupExtensionsBootstrapAdapterFactory
     implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender
 {
   /**
@@ -77,8 +72,8 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(SetupExtensionsEditPlugin.INSTANCE,
-      SetupExtensionsPackage.eNS_URI);
+  protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(SetupExtensionsBootstrapEditPlugin.INSTANCE,
+      SetupExtensionsBootstrapPackage.eNS_URI);
 
   /**
    * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -94,7 +89,7 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
    * <!-- end-user-doc -->
    * @generated
    */
-  public SetupExtensionsItemProviderAdapterFactory()
+  public SetupExtensionsBootstrapItemProviderAdapterFactory()
   {
     supportedTypes.add(IEditingDomainItemProvider.class);
     supportedTypes.add(IStructuredItemContentProvider.class);
@@ -104,132 +99,7 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.FullBuildTask} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected FullBuildTaskItemProvider fullBuildTaskItemProvider;
-
-  /**
-   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.FullBuildTask}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createFullBuildTaskAdapter()
-  {
-    if (fullBuildTaskItemProvider == null)
-    {
-      fullBuildTaskItemProvider = new FullBuildTaskItemProvider(this);
-    }
-
-    return fullBuildTaskItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ExecuteCommandTaskItemProvider executeCommandTaskItemProvider;
-
-  /**
-   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.ExecuteCommandTask}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createExecuteCommandTaskAdapter()
-  {
-    if (executeCommandTaskItemProvider == null)
-    {
-      executeCommandTaskItemProvider = new ExecuteCommandTaskItemProvider(this);
-    }
-
-    return executeCommandTaskItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.CommandParameter} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected CommandParameterItemProvider commandParameterItemProvider;
-
-  /**
-   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.CommandParameter}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createCommandParameterAdapter()
-  {
-    if (commandParameterItemProvider == null)
-    {
-      commandParameterItemProvider = new CommandParameterItemProvider(this);
-    }
-
-    return commandParameterItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.IvyResolveTask} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected IvyResolveTaskItemProvider ivyResolveTaskItemProvider;
-
-  /**
-   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.IvyResolveTask}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createIvyResolveTaskAdapter()
-  {
-    if (ivyResolveTaskItemProvider == null)
-    {
-      ivyResolveTaskItemProvider = new IvyResolveTaskItemProvider(this);
-    }
-
-    return ivyResolveTaskItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.Project} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ProjectItemProvider projectItemProvider;
-
-  /**
-   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.Project}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createProjectAdapter()
-  {
-    if (projectItemProvider == null)
-    {
-      projectItemProvider = new ProjectItemProvider(this);
-    }
-
-    return projectItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.UnzipTask} instances.
+   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -237,7 +107,7 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
   protected UnzipTaskItemProvider unzipTaskItemProvider;
 
   /**
-   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.UnzipTask}.
+   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -254,32 +124,7 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.EpfImportTask} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected EpfImportTaskItemProvider epfImportTaskItemProvider;
-
-  /**
-   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.EpfImportTask}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createEpfImportTaskAdapter()
-  {
-    if (epfImportTaskItemProvider == null)
-    {
-      epfImportTaskItemProvider = new EpfImportTaskItemProvider(this);
-    }
-
-    return epfImportTaskItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask} instances.
+   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -287,7 +132,7 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
   protected CreateShortcutTaskItemProvider createShortcutTaskItemProvider;
 
   /**
-   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensions.CreateShortcutTask}.
+   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -452,33 +297,9 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
   @Override
   public void dispose()
   {
-    if (fullBuildTaskItemProvider != null)
-    {
-      fullBuildTaskItemProvider.dispose();
-    }
-    if (executeCommandTaskItemProvider != null)
-    {
-      executeCommandTaskItemProvider.dispose();
-    }
-    if (commandParameterItemProvider != null)
-    {
-      commandParameterItemProvider.dispose();
-    }
-    if (ivyResolveTaskItemProvider != null)
-    {
-      ivyResolveTaskItemProvider.dispose();
-    }
-    if (projectItemProvider != null)
-    {
-      projectItemProvider.dispose();
-    }
     if (unzipTaskItemProvider != null)
     {
       unzipTaskItemProvider.dispose();
-    }
-    if (epfImportTaskItemProvider != null)
-    {
-      epfImportTaskItemProvider.dispose();
     }
     if (createShortcutTaskItemProvider != null)
     {
@@ -538,21 +359,10 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
       @Override
       public Object caseAnnotation(Annotation object)
       {
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createFullBuildTask()));
+        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsBootstrapFactory.eINSTANCE.createUnzipTask()));
 
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createExecuteCommandTask()));
-
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createCommandParameter()));
-
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createIvyResolveTask()));
-
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createProject()));
-
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createUnzipTask()));
-
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createEpfImportTask()));
-
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsFactory.eINSTANCE.createCreateShortcutTask()));
+        newChildDescriptors
+            .add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsBootstrapFactory.eINSTANCE.createCreateShortcutTask()));
 
         return null;
       }
@@ -590,7 +400,7 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
     @Override
     public ResourceLocator getResourceLocator()
     {
-      return SetupExtensionsEditPlugin.INSTANCE;
+      return SetupExtensionsBootstrapEditPlugin.INSTANCE;
     }
   }
 
@@ -647,22 +457,10 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
       public Object caseSetupTaskContainer(SetupTaskContainer object)
       {
         newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createFullBuildTask()));
+            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsBootstrapFactory.eINSTANCE.createUnzipTask()));
 
-        newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createExecuteCommandTask()));
-
-        newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createIvyResolveTask()));
-
-        newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createUnzipTask()));
-
-        newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createEpfImportTask()));
-
-        newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsFactory.eINSTANCE.createCreateShortcutTask()));
+        newChildDescriptors.add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS,
+            SetupExtensionsBootstrapFactory.eINSTANCE.createCreateShortcutTask()));
 
         return null;
       }
@@ -700,7 +498,7 @@ public class SetupExtensionsItemProviderAdapterFactory extends SetupExtensionsAd
     @Override
     public ResourceLocator getResourceLocator()
     {
-      return SetupExtensionsEditPlugin.INSTANCE;
+      return SetupExtensionsBootstrapEditPlugin.INSTANCE;
     }
   }
 

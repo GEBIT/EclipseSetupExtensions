@@ -1,11 +1,6 @@
-//
-// Copyright (C) 2015
-// GEBIT Solutions GmbH,
-// Berlin, Duesseldorf, Stuttgart (Germany)
-// All rights reserved.
-//
-//
-package de.gebit.eclipse.installer.setupextensions.provider;
+/**
+ */
+package de.gebit.eclipse.installer.setupextensionsbootstrap.provider;
 
 import org.eclipse.oomph.base.provider.BaseEditPlugin;
 import org.eclipse.oomph.setup.provider.SetupEditPlugin;
@@ -14,12 +9,12 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
- * This is the central singleton for the SetupExtensions edit plugin.
+ * This is the central singleton for the SetupExtensionsBootstrap edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class SetupExtensionsEditPlugin extends EMFPlugin
+public final class SetupExtensionsBootstrapEditPlugin extends EMFPlugin
 {
   /**
    * Keep track of the singleton.
@@ -27,7 +22,7 @@ public final class SetupExtensionsEditPlugin extends EMFPlugin
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final SetupExtensionsEditPlugin INSTANCE = new SetupExtensionsEditPlugin();
+  public static final SetupExtensionsBootstrapEditPlugin INSTANCE = new SetupExtensionsBootstrapEditPlugin();
 
   /**
    * Keep track of the singleton.
@@ -43,7 +38,7 @@ public final class SetupExtensionsEditPlugin extends EMFPlugin
    * <!-- end-user-doc -->
    * @generated
    */
-  public SetupExtensionsEditPlugin()
+  public SetupExtensionsBootstrapEditPlugin()
   {
     super(new ResourceLocator[] { BaseEditPlugin.INSTANCE, SetupEditPlugin.INSTANCE, });
   }

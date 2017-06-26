@@ -5,7 +5,7 @@
 // All rights reserved.
 //
 //
-package de.gebit.eclipse.installer.setupextensions.impl;
+package de.gebit.eclipse.installer.setupextensionsbootstrap.impl;
 
 import org.eclipse.oomph.setup.SetupTaskContext;
 import org.eclipse.oomph.setup.impl.SetupTaskImpl;
@@ -24,8 +24,8 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
-import de.gebit.eclipse.installer.setupextensions.UnzipTask;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,8 +35,8 @@ import de.gebit.eclipse.installer.setupextensions.UnzipTask;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.gebit.eclipse.installer.setupextensions.impl.UnzipTaskImpl#getArchive <em>Archive</em>}</li>
- *   <li>{@link de.gebit.eclipse.installer.setupextensions.impl.UnzipTaskImpl#getDestination <em>Destination</em>}</li>
+ *   <li>{@link de.gebit.eclipse.installer.setupextensionsbootstrap.impl.UnzipTaskImpl#getArchive <em>Archive</em>}</li>
+ *   <li>{@link de.gebit.eclipse.installer.setupextensionsbootstrap.impl.UnzipTaskImpl#getDestination <em>Destination</em>}</li>
  * </ul>
  *
  * @generated
@@ -101,7 +101,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   @Override
   protected EClass eStaticClass()
   {
-    return SetupExtensionsPackage.Literals.UNZIP_TASK;
+    return SetupExtensionsBootstrapPackage.Literals.UNZIP_TASK;
   }
 
   /**
@@ -127,7 +127,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
     archive = newArchive;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, SetupExtensionsPackage.UNZIP_TASK__ARCHIVE, oldArchive, archive));
+      eNotify(new ENotificationImpl(this, Notification.SET, SetupExtensionsBootstrapPackage.UNZIP_TASK__ARCHIVE, oldArchive, archive));
     }
   }
 
@@ -154,7 +154,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
     destination = newDestination;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, SetupExtensionsPackage.UNZIP_TASK__DESTINATION, oldDestination, destination));
+      eNotify(new ENotificationImpl(this, Notification.SET, SetupExtensionsBootstrapPackage.UNZIP_TASK__DESTINATION, oldDestination, destination));
     }
   }
 
@@ -168,9 +168,9 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   {
     switch (featureID)
     {
-    case SetupExtensionsPackage.UNZIP_TASK__ARCHIVE:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__ARCHIVE:
       return getArchive();
-    case SetupExtensionsPackage.UNZIP_TASK__DESTINATION:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__DESTINATION:
       return getDestination();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -186,10 +186,10 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   {
     switch (featureID)
     {
-    case SetupExtensionsPackage.UNZIP_TASK__ARCHIVE:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__ARCHIVE:
       setArchive((String)newValue);
       return;
-    case SetupExtensionsPackage.UNZIP_TASK__DESTINATION:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__DESTINATION:
       setDestination((String)newValue);
       return;
     }
@@ -206,10 +206,10 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   {
     switch (featureID)
     {
-    case SetupExtensionsPackage.UNZIP_TASK__ARCHIVE:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__ARCHIVE:
       setArchive(ARCHIVE_EDEFAULT);
       return;
-    case SetupExtensionsPackage.UNZIP_TASK__DESTINATION:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__DESTINATION:
       setDestination(DESTINATION_EDEFAULT);
       return;
     }
@@ -226,9 +226,9 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
   {
     switch (featureID)
     {
-    case SetupExtensionsPackage.UNZIP_TASK__ARCHIVE:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__ARCHIVE:
       return ARCHIVE_EDEFAULT == null ? archive != null : !ARCHIVE_EDEFAULT.equals(archive);
-    case SetupExtensionsPackage.UNZIP_TASK__DESTINATION:
+    case SetupExtensionsBootstrapPackage.UNZIP_TASK__DESTINATION:
       return DESTINATION_EDEFAULT == null ? destination != null : !DESTINATION_EDEFAULT.equals(destination);
     }
     return super.eIsSet(featureID);

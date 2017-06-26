@@ -20,13 +20,23 @@
    </extension>
 
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated SetupExtensionsBootstrap -->
+      <extender
+            uri="http://www.eclipse.org/oomph/base/1.0"
+            class="de.gebit.eclipse.installer.setupextensionsbootstrap.provider.SetupExtensionsBootstrapItemProviderAdapterFactory$BaseChildCreationExtender"/>
+      <extender
+            uri="http://www.eclipse.org/oomph/setup/1.0"
+            class="de.gebit.eclipse.installer.setupextensionsbootstrap.provider.SetupExtensionsBootstrapItemProviderAdapterFactory$SetupChildCreationExtender"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated SetupExtensions -->
       <extender
             uri="http://www.eclipse.org/oomph/base/1.0"
-            class="de.gebit.eclipse.installer.setupextensionsbootstrap.provider.SetupExtensionsItemProviderAdapterFactory$BaseChildCreationExtender"/>
+            class="de.gebit.eclipse.installer.setupextensionsbootstrap.provider.SetupExtensionsBootstrapItemProviderAdapterFactory$BaseChildCreationExtender"/>
       <extender
             uri="http://www.eclipse.org/oomph/setup/1.0"
-            class="de.gebit.eclipse.installer.setupextensionsbootstrap.provider.SetupExtensionsItemProviderAdapterFactory$SetupChildCreationExtender"/>
+            class="de.gebit.eclipse.installer.setupextensionsbootstrap.provider.SetupExtensionsBootstrapItemProviderAdapterFactory$SetupChildCreationExtender"/>
    </extension>
 
 </plugin>

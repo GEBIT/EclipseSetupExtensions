@@ -5,7 +5,7 @@
 // All rights reserved.
 //
 //
-package de.gebit.eclipse.installer.setupextensions;
+package de.gebit.eclipse.installer.setupextensionsbootstrap;
 
 import org.eclipse.oomph.setup.SetupTask;
 
@@ -18,11 +18,11 @@ import org.eclipse.oomph.setup.SetupTask;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.gebit.eclipse.installer.setupextensions.UnzipTask#getArchive <em>Archive</em>}</li>
- *   <li>{@link de.gebit.eclipse.installer.setupextensions.UnzipTask#getDestination <em>Destination</em>}</li>
+ *   <li>{@link de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask#getArchive <em>Archive</em>}</li>
+ *   <li>{@link de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask#getDestination <em>Destination</em>}</li>
  * </ul>
  *
- * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getUnzipTask()
+ * @see de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage#getUnzipTask()
  * @model annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='BOOTSTRAP STARTUP MANUAL'"
  * @generated
  */
@@ -38,14 +38,14 @@ public interface UnzipTask extends SetupTask
    * <!-- end-user-doc -->
    * @return the value of the '<em>Archive</em>' attribute.
    * @see #setArchive(String)
-   * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getUnzipTask_Archive()
+   * @see de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage#getUnzipTask_Archive()
    * @model required="true"
    * @generated
    */
   String getArchive();
 
   /**
-   * Sets the value of the '{@link de.gebit.eclipse.installer.setupextensions.UnzipTask#getArchive <em>Archive</em>}' attribute.
+   * Sets the value of the '{@link de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask#getArchive <em>Archive</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Archive</em>' attribute.
@@ -64,14 +64,14 @@ public interface UnzipTask extends SetupTask
    * <!-- end-user-doc -->
    * @return the value of the '<em>Destination</em>' attribute.
    * @see #setDestination(String)
-   * @see de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage#getUnzipTask_Destination()
+   * @see de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage#getUnzipTask_Destination()
    * @model required="true"
    * @generated
    */
   String getDestination();
 
   /**
-   * Sets the value of the '{@link de.gebit.eclipse.installer.setupextensions.UnzipTask#getDestination <em>Destination</em>}' attribute.
+   * Sets the value of the '{@link de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask#getDestination <em>Destination</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Destination</em>' attribute.

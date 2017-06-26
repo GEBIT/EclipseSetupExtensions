@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
-Bundle-SymbolicName: SetupExtensions;singleton:=true
+Bundle-SymbolicName: SetupExtensionsBootstrap;singleton:=true
 Bundle-Version: 1.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy
@@ -12,12 +12,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;bundle-version="[2.10.0,3.0.0)";visibility:=reexport,
  org.eclipse.oomph.setup;bundle-version="[1.3.0,2.0.0)";visibility:=reexport,
  org.eclipse.oomph.base;bundle-version="[1.3.0,2.0.0)";visibility:=reexport,
- org.eclipse.core.resources;resolution:=optional,
- org.apache.ivyde.eclipse;bundle-version="2.2.0";resolution:=optional,
- org.eclipse.core.commands;resolution:=optional,
- org.eclipse.ui.workbench;resolution:=optional,
- org.eclipse.jdt.core;resolution:=optional,
  org.eclipse.swt
-Export-Package: de.gebit.eclipse.installer.setupextensions;version="1.1.0",
- de.gebit.eclipse.installer.setupextensions.impl;version="1.1.0",
- de.gebit.eclipse.installer.setupextensions.util;version="1.1.0"
+Export-Package: de.gebit.eclipse.installer.setupextensionsbootstrap;version="1.1.0",
+ de.gebit.eclipse.installer.setupextensionsbootstrap.impl;version="1.1.0",
+ de.gebit.eclipse.installer.setupextensionsbootstrap.util;version="1.1.0"

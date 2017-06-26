@@ -10,9 +10,13 @@
       multipleEditorPages="false" generateModelWizard="false" extensibleProviderFactory="true"
       childCreationExtenders="true" fileExtensions="setup" ecorePackage="SetupExtensionsBootstrap.ecore#/"
       publicationLocation="/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.ecore">
+    <genClasses ecoreClass="SetupExtensionsBootstrap.ecore#//UnzipTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//UnzipTask/archive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//UnzipTask/destination"/>
+    </genClasses>
     <genClasses ecoreClass="SetupExtensionsBootstrap.ecore#//CreateShortcutTask">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensions.ecore#//CreateShortcutTask/location"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensions.ecore#//CreateShortcutTask/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//CreateShortcutTask/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//CreateShortcutTask/target"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

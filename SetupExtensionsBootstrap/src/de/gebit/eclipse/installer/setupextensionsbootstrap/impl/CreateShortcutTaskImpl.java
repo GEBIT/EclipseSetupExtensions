@@ -1,6 +1,6 @@
 /**
  */
-package de.gebit.eclipse.installer.setupextensions.impl;
+package de.gebit.eclipse.installer.setupextensionsbootstrap.impl;
 
 import org.eclipse.oomph.setup.SetupTaskContext;
 import org.eclipse.oomph.setup.Trigger;
@@ -15,8 +15,8 @@ import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import de.gebit.eclipse.installer.setupextensions.CreateShortcutTask;
-import de.gebit.eclipse.installer.setupextensions.SetupExtensionsPackage;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
 import mslinks.ShellLink;
 
 /**
@@ -27,8 +27,8 @@ import mslinks.ShellLink;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.gebit.eclipse.installer.setupextensions.impl.CreateShortcutTaskImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link de.gebit.eclipse.installer.setupextensions.impl.CreateShortcutTaskImpl#getLocation <em>Location</em>}</li>
+ *   <li>{@link de.gebit.eclipse.installer.setupextensionsbootstrap.impl.CreateShortcutTaskImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.gebit.eclipse.installer.setupextensionsbootstrap.impl.CreateShortcutTaskImpl#getLocation <em>Location</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,7 +93,7 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   @Override
   protected EClass eStaticClass()
   {
-    return SetupExtensionsPackage.Literals.CREATE_SHORTCUT_TASK;
+    return SetupExtensionsBootstrapPackage.Literals.CREATE_SHORTCUT_TASK;
   }
 
   /**
@@ -119,7 +119,7 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
     target = newTarget;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, SetupExtensionsPackage.CREATE_SHORTCUT_TASK__TARGET, oldTarget, target));
+      eNotify(new ENotificationImpl(this, Notification.SET, SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__TARGET, oldTarget, target));
     }
   }
 
@@ -146,7 +146,7 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
     location = newLocation;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, SetupExtensionsPackage.CREATE_SHORTCUT_TASK__LOCATION, oldLocation, location));
+      eNotify(new ENotificationImpl(this, Notification.SET, SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__LOCATION, oldLocation, location));
     }
   }
 
@@ -160,9 +160,9 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   {
     switch (featureID)
     {
-    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK__TARGET:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__TARGET:
       return getTarget();
-    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK__LOCATION:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__LOCATION:
       return getLocation();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -178,10 +178,10 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   {
     switch (featureID)
     {
-    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK__TARGET:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__TARGET:
       setTarget((String)newValue);
       return;
-    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK__LOCATION:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__LOCATION:
       setLocation((String)newValue);
       return;
     }
@@ -198,10 +198,10 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   {
     switch (featureID)
     {
-    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK__TARGET:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__TARGET:
       setTarget(TARGET_EDEFAULT);
       return;
-    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK__LOCATION:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__LOCATION:
       setLocation(LOCATION_EDEFAULT);
       return;
     }
@@ -218,9 +218,9 @@ public class CreateShortcutTaskImpl extends SetupTaskImpl implements CreateShort
   {
     switch (featureID)
     {
-    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK__TARGET:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__TARGET:
       return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
-    case SetupExtensionsPackage.CREATE_SHORTCUT_TASK__LOCATION:
+    case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__LOCATION:
       return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
     }
     return super.eIsSet(featureID);
