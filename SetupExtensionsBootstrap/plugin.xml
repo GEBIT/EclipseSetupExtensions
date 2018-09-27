@@ -13,5 +13,12 @@
             class="de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage"
             genModel="model/SetupExtensionsBootstrap.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.oomph.setup.core.stringFilters">
+      <stringFilter
+            class="de.gebit.eclipse.installer.setupextensionsbootstrap.util.BaseVersionFilter"
+            name="baseVersion">
+      </stringFilter>
+   </extension>
 
 </plugin>

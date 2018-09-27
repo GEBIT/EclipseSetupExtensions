@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-SymbolicName: SetupExtensionsBootstrap.edit;singleton:=true
-Bundle-Version: 1.1.0.qualifier
+Bundle-Version: 1.1.1.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.gebit.eclipse.installer.setupextensionsbootstrap.provider.SetupExtensionsBootstrapEditPlugin$Implementation
 Bundle-ActivationPolicy: lazy
@@ -17,4 +17,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.oomph.base;bundle-version="[1.1.0,2.0.0)";visibility:=reexport,
  org.eclipse.oomph.base.edit;bundle-version="[1.1.0,2.0.0)";visibility:=reexport,
  SetupExtensionsBootstrap;bundle-version="[1.0.0,2.0.0)";visibility:=reexport
-Export-Package: de.gebit.eclipse.installer.setupextensionsbootstrap.provider;version="1.1.0"
+Export-Package: de.gebit.eclipse.installer.setupextensionsbootstrap.provider;version="1.1.1"
