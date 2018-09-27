@@ -2,6 +2,7 @@
  */
 package de.gebit.eclipse.installer.setupextensionsbootstrap.impl;
 
+import org.eclipse.oomph.base.BasePackage;
 import org.eclipse.oomph.setup.SetupPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -83,12 +84,15 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
     }
 
     // Obtain or create and register package
-    SetupExtensionsBootstrapPackageImpl theSetupExtensionsBootstrapPackage = (SetupExtensionsBootstrapPackageImpl)(EPackage.Registry.INSTANCE
-        .get(eNS_URI) instanceof SetupExtensionsBootstrapPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SetupExtensionsBootstrapPackageImpl());
+    Object registeredSetupExtensionsBootstrapPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+    SetupExtensionsBootstrapPackageImpl theSetupExtensionsBootstrapPackage = registeredSetupExtensionsBootstrapPackage instanceof SetupExtensionsBootstrapPackageImpl
+        ? (SetupExtensionsBootstrapPackageImpl)registeredSetupExtensionsBootstrapPackage
+        : new SetupExtensionsBootstrapPackageImpl();
 
     isInited = true;
 
     // Initialize simple dependencies
+    BasePackage.eINSTANCE.eClass();
     SetupPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
@@ -266,7 +270,7 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
-    createResource("https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.ecore");
+    createResource("https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.1.ecore");
 
     // Create annotations
     // http://www.eclipse.org/emf/2002/Ecore
@@ -287,7 +291,7 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
   {
     String source = "http://www.eclipse.org/emf/2002/Ecore";
     addAnnotation(this, source, new String[] { "schemaLocation",
-        "https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.ecore" });
+        "https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.1.ecore" });
   }
 
   /**

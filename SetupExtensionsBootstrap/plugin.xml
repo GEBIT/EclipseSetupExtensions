@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SetupExtensions -->
       <package
-            uri="http://eclipse.gebit.de/SetupExtensionsBootstrap/1.1"
+            uri="http://eclipse.gebit.de/SetupExtensionsBootstrap/1.1.1"
             class="de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage"
             genModel="model/SetupExtensionsBootstrap.genmodel"/>
    </extension>

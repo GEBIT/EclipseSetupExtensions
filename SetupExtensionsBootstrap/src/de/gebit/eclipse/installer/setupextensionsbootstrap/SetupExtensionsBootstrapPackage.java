@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.1.ecore'"
  *        annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.setup.extensions' repository='https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/' installableUnits='SetupExtensionsBootstrap.feature.group'"
  * @generated
  */
@@ -41,7 +41,7 @@ public interface SetupExtensionsBootstrapPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  String eNS_URI = "http://eclipse.gebit.de/SetupExtensionsBootstrap/1.1";
+  String eNS_URI = "http://eclipse.gebit.de/SetupExtensionsBootstrap/1.1.1";
 
   /**
    * The package namespace name.

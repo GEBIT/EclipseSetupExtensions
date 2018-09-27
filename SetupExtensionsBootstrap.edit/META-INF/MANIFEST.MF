@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-SymbolicName: SetupExtensionsBootstrap.edit;singleton:=true
+Automatic-Module-Name: SetupExtensionsBootstrap.edit
 Bundle-Version: 1.1.1.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.gebit.eclipse.installer.setupextensionsbootstrap.provider.SetupExtensionsBootstrapEditPlugin$Implementation

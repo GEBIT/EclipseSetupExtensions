@@ -247,7 +247,7 @@ public class UnzipTaskImpl extends SetupTaskImpl implements UnzipTask
       return super.toString();
     }
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (archive: ");
     result.append(archive);
     result.append(", destination: ");

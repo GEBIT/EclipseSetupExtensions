@@ -14,6 +14,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import java.util.Collection;
 import java.util.List;
 
+import de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
 
 /**
@@ -114,7 +115,7 @@ public class CreateShortcutTaskItemProvider extends SetupTaskItemProvider
   @Override
   public String getText(Object object)
   {
-    String label = ((de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask)object).getID();
+    String label = ((CreateShortcutTask)object).getID();
     return label == null || label.length() == 0 ? getString("_UI_CreateShortcutTask_type") : getString("_UI_CreateShortcutTask_type") + " " + label;
   }
 
@@ -130,7 +131,7 @@ public class CreateShortcutTaskItemProvider extends SetupTaskItemProvider
   {
     updateChildren(notification);
 
-    switch (notification.getFeatureID(de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask.class))
+    switch (notification.getFeatureID(CreateShortcutTask.class))
     {
     case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__TARGET:
     case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK__LOCATION:

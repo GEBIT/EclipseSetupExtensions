@@ -20,6 +20,7 @@ import java.util.Collection;
 import java.util.List;
 
 import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask;
 
 /**
  * This is the item provider adapter for a {@link de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask} object.
@@ -117,7 +118,7 @@ public class UnzipTaskItemProvider extends SetupTaskItemProvider
    */
   public String getTextGen(Object object)
   {
-    String label = ((de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask)object).getID();
+    String label = ((UnzipTask)object).getID();
     return label == null || label.length() == 0 ? getString("_UI_UnzipTask_type") : getString("_UI_UnzipTask_type") + " " + label;
   }
 
@@ -142,7 +143,7 @@ public class UnzipTaskItemProvider extends SetupTaskItemProvider
   {
     updateChildren(notification);
 
-    switch (notification.getFeatureID(de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask.class))
+    switch (notification.getFeatureID(UnzipTask.class))
     {
     case SetupExtensionsBootstrapPackage.UNZIP_TASK__ARCHIVE:
     case SetupExtensionsBootstrapPackage.UNZIP_TASK__DESTINATION:

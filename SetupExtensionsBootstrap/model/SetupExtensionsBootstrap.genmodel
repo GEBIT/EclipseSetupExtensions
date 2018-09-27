@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/SetupExtensionsBootstrap/src" creationIcons="false" editorDirectory=""
-    modelPluginID="SetupExtensionsBootstrap" modelName="SetupExtensionsBootstrap" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    testsDirectory="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
-    copyrightFields="false" optimizedHasChildren="true" usedGenPackages="../../org.eclipse.oomph.base/model/Base.genmodel#//base ../../org.eclipse.oomph.setup/model/Setup.genmodel#//setup"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/SetupExtensionsBootstrap/src" creationIcons="false"
+    editorDirectory="" modelPluginID="SetupExtensionsBootstrap" modelName="SetupExtensionsBootstrap"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory=""
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    optimizedHasChildren="true" usedGenPackages="../../org.eclipse.oomph.base/model/Base.genmodel#//base ../../org.eclipse.oomph.setup/model/Setup.genmodel#//setup"
     importOrganizing="true" cleanup="true">
   <foreignModel>SetupExtensionsBootstrap.ecore</foreignModel>
-  <genPackages prefix="SetupExtensionsBootstrap" basePackage="de.gebit.eclipse.installer" disposableProviderFactory="true"
-      multipleEditorPages="false" generateModelWizard="false" extensibleProviderFactory="true"
-      childCreationExtenders="true" fileExtensions="setup" ecorePackage="SetupExtensionsBootstrap.ecore#/"
-      publicationLocation="/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.ecore">
+  <genPackages prefix="SetupExtensionsBootstrap" basePackage="de.gebit.eclipse.installer"
+      disposableProviderFactory="true" multipleEditorPages="false" generateModelWizard="false"
+      extensibleProviderFactory="true" childCreationExtenders="true" fileExtensions="setup"
+      ecorePackage="SetupExtensionsBootstrap.ecore#/" publicationLocation="/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.1.ecore">
     <genClasses ecoreClass="SetupExtensionsBootstrap.ecore#//UnzipTask">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//UnzipTask/archive"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//UnzipTask/destination"/>
     </genClasses>
     <genClasses ecoreClass="SetupExtensionsBootstrap.ecore#//CreateShortcutTask">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//CreateShortcutTask/location"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//CreateShortcutTask/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//CreateShortcutTask/location"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
