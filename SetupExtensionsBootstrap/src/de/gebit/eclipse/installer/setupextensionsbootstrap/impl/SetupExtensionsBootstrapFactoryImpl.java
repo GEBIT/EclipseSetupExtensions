@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.IncludeTask;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapFactory;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask;
@@ -70,6 +71,8 @@ public class SetupExtensionsBootstrapFactoryImpl extends EFactoryImpl implements
       return createUnzipTask();
     case SetupExtensionsBootstrapPackage.CREATE_SHORTCUT_TASK:
       return createCreateShortcutTask();
+    case SetupExtensionsBootstrapPackage.INCLUDE_TASK:
+      return createIncludeTask();
     default:
       throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -97,6 +100,18 @@ public class SetupExtensionsBootstrapFactoryImpl extends EFactoryImpl implements
   {
     CreateShortcutTaskImpl createShortcutTask = new CreateShortcutTaskImpl();
     return createShortcutTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IncludeTask createIncludeTask()
+  {
+    IncludeTaskImpl includeTask = new IncludeTaskImpl();
+    return includeTask;
   }
 
   /**

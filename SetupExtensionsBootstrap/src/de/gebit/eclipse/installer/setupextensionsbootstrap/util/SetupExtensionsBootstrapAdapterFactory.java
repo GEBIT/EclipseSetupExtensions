@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.IncludeTask;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask;
 
@@ -89,6 +90,12 @@ public class SetupExtensionsBootstrapAdapterFactory extends AdapterFactoryImpl
     }
 
     @Override
+    public Adapter caseIncludeTask(IncludeTask object)
+    {
+      return createIncludeTaskAdapter();
+    }
+
+    @Override
     public Adapter caseModelElement(ModelElement object)
     {
       return createModelElementAdapter();
@@ -147,6 +154,21 @@ public class SetupExtensionsBootstrapAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCreateShortcutTaskAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.gebit.eclipse.installer.setupextensionsbootstrap.IncludeTask <em>Include Task</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.gebit.eclipse.installer.setupextensionsbootstrap.IncludeTask
+   * @generated
+   */
+  public Adapter createIncludeTaskAdapter()
   {
     return null;
   }

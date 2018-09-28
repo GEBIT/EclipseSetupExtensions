@@ -41,6 +41,15 @@ public interface SetupExtensionsBootstrapFactory extends EFactory
   CreateShortcutTask createCreateShortcutTask();
 
   /**
+   * Returns a new object of class '<em>Include Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Include Task</em>'.
+   * @generated
+   */
+  IncludeTask createIncludeTask();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

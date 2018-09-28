@@ -8,7 +8,7 @@
   <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
     <details key="variableName" value="p2.setup.extensions"/>
     <details key="repository" value="https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/"/>
-    <details key="installableUnits" value="SetupExtensionsBootstrap.feature.group"/>
+    <details key="installableUnits" value="SetupExtensionsBootstrap.feature.group[1.1.1,2.0.0)"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="UnzipTask" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
@@ -26,5 +26,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncludeTask" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
+    <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
+      <details key="triggers" value="BOOTSTRAP STARTUP"/>
+    </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>

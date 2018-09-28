@@ -149,6 +149,31 @@ public class SetupExtensionsBootstrapItemProviderAdapterFactory extends SetupExt
   }
 
   /**
+   * This keeps track of the one adapter used for all {@link de.gebit.eclipse.installer.setupextensionsbootstrap.IncludeTask} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected IncludeTaskItemProvider includeTaskItemProvider;
+
+  /**
+   * This creates an adapter for a {@link de.gebit.eclipse.installer.setupextensionsbootstrap.IncludeTask}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createIncludeTaskAdapter()
+  {
+    if (includeTaskItemProvider == null)
+    {
+      includeTaskItemProvider = new IncludeTaskItemProvider(this);
+    }
+
+    return includeTaskItemProvider;
+  }
+
+  /**
    * This returns the root adapter factory that contains this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -305,6 +330,10 @@ public class SetupExtensionsBootstrapItemProviderAdapterFactory extends SetupExt
     {
       createShortcutTaskItemProvider.dispose();
     }
+    if (includeTaskItemProvider != null)
+    {
+      includeTaskItemProvider.dispose();
+    }
   }
 
   /**
@@ -363,6 +392,8 @@ public class SetupExtensionsBootstrapItemProviderAdapterFactory extends SetupExt
 
         newChildDescriptors
             .add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsBootstrapFactory.eINSTANCE.createCreateShortcutTask()));
+
+        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SetupExtensionsBootstrapFactory.eINSTANCE.createIncludeTask()));
 
         return null;
       }
@@ -461,6 +492,9 @@ public class SetupExtensionsBootstrapItemProviderAdapterFactory extends SetupExt
 
         newChildDescriptors.add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS,
             SetupExtensionsBootstrapFactory.eINSTANCE.createCreateShortcutTask()));
+
+        newChildDescriptors
+            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SetupExtensionsBootstrapFactory.eINSTANCE.createIncludeTask()));
 
         return null;
       }

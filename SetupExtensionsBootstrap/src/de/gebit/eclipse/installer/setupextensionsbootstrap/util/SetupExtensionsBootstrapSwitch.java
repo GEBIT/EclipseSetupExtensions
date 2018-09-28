@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.IncludeTask;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask;
 
@@ -112,6 +113,24 @@ public class SetupExtensionsBootstrapSwitch<T> extends Switch<T>
       }
       return result;
     }
+    case SetupExtensionsBootstrapPackage.INCLUDE_TASK:
+    {
+      IncludeTask includeTask = (IncludeTask)theEObject;
+      T result = caseIncludeTask(includeTask);
+      if (result == null)
+      {
+        result = caseSetupTask(includeTask);
+      }
+      if (result == null)
+      {
+        result = caseModelElement(includeTask);
+      }
+      if (result == null)
+      {
+        result = defaultCase(theEObject);
+      }
+      return result;
+    }
     default:
       return defaultCase(theEObject);
     }
@@ -145,6 +164,22 @@ public class SetupExtensionsBootstrapSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCreateShortcutTask(CreateShortcutTask object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Include Task</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Include Task</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIncludeTask(IncludeTask object)
   {
     return null;
   }

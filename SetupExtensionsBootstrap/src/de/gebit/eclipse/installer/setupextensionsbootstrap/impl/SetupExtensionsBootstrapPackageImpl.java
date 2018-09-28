@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.gebit.eclipse.installer.setupextensionsbootstrap.CreateShortcutTask;
+import de.gebit.eclipse.installer.setupextensionsbootstrap.IncludeTask;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapFactory;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.SetupExtensionsBootstrapPackage;
 import de.gebit.eclipse.installer.setupextensionsbootstrap.UnzipTask;
@@ -36,6 +37,13 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
    * @generated
    */
   private EClass createShortcutTaskEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass includeTaskEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -181,6 +189,17 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
    * @generated
    */
   @Override
+  public EClass getIncludeTask()
+  {
+    return includeTaskEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public SetupExtensionsBootstrapFactory getSetupExtensionsBootstrapFactory()
   {
     return (SetupExtensionsBootstrapFactory)getEFactoryInstance();
@@ -216,6 +235,8 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
     createShortcutTaskEClass = createEClass(CREATE_SHORTCUT_TASK);
     createEAttribute(createShortcutTaskEClass, CREATE_SHORTCUT_TASK__TARGET);
     createEAttribute(createShortcutTaskEClass, CREATE_SHORTCUT_TASK__LOCATION);
+
+    includeTaskEClass = createEClass(INCLUDE_TASK);
   }
 
   /**
@@ -255,6 +276,7 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
     // Add supertypes to classes
     unzipTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
     createShortcutTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
+    includeTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
 
     // Initialize classes and features; add operations and parameters
     initEClass(unzipTaskEClass, UnzipTask.class, "UnzipTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -268,6 +290,8 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCreateShortcutTask_Location(), ecorePackage.getEString(), "location", null, 1, 1, CreateShortcutTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(includeTaskEClass, IncludeTask.class, "IncludeTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource("https://raw.githubusercontent.com/GEBIT/EclipseSetupExtensions/master/SetupExtensionsBootstrap/model/SetupExtensionsBootstrap-1.1.1.ecore");
@@ -304,7 +328,7 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
     addAnnotation(this, source, new String[] { "variableName", "p2.setup.extensions", "repository",
-        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensionsBootstrap.feature.group" });
+        "https://github.com/GEBIT/EclipseSetupExtensions/wiki/updates/", "installableUnits", "SetupExtensionsBootstrap.feature.group[1.1.1,2.0.0)" });
   }
 
   /**
@@ -318,6 +342,7 @@ public class SetupExtensionsBootstrapPackageImpl extends EPackageImpl implements
     String source = "http://www.eclipse.org/oomph/setup/ValidTriggers";
     addAnnotation(unzipTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
     addAnnotation(createShortcutTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
+    addAnnotation(includeTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP" });
   }
 
 } // SetupExtensionsBootstrapPackageImpl

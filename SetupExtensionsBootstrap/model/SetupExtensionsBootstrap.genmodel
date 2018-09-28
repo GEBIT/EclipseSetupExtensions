@@ -19,5 +19,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//CreateShortcutTask/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SetupExtensionsBootstrap.ecore#//CreateShortcutTask/location"/>
     </genClasses>
+    <genClasses ecoreClass="SetupExtensionsBootstrap.ecore#//IncludeTask" labelFeature="../../org.eclipse.oomph.setup/model/Setup.genmodel#//setup/SetupTask/description"/>
   </genPackages>
 </genmodel:GenModel>
